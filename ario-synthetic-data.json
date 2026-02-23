@@ -1,0 +1,845 @@
+{
+  "meta": {
+    "title": "Ario Demo Tool — Synthetic Data",
+    "version": "1.0",
+    "disclaimer": "All data shown is illustrative synthetic data created for demonstration purposes only. No real consumer purchase data is used or represented.",
+    "created": "2026-02"
+  },
+
+  "brands": [
+
+    {
+      "id": "ikea",
+      "name": "IKEA",
+      "category": "Home & Kitchen",
+      "logo": "🏠",
+      "tagline": "Home furnishings & accessories",
+      "color": "#0058A3",
+      "personas": [
+        {
+          "id": "eliza",
+          "name": "Eliza Santos",
+          "age": 34,
+          "income": "$87,000",
+          "location": "Tampa, FL",
+          "lifestage": "Bathroom Renovator",
+          "signal": "Eliza is 3 weeks into a major bathroom renovation",
+          "avatar": "ES",
+          "orders": 6,
+          "totalSpent": 1748,
+          "avgOrder": 291,
+          "retailers": ["Wayfair", "Amazon"],
+          "purchases": [
+            { "date": "Oct 15, 2025", "product": "Fresca Torino 48\" Modern Bathroom Vanity Set, White", "retailer": "Wayfair", "price": 649.00, "total": 649.00, "status": "Delivered" },
+            { "date": "Oct 12, 2025", "product": "Spezia 44\"–48\" W x 76\" H Double Sliding Semi-Frameless Shower Door, Chrome", "retailer": "Wayfair", "price": 412.00, "total": 412.00, "status": "Delivered" },
+            { "date": "Oct 12, 2025", "product": "Dual-Flush Elongated Bidet Toilet with Heated Seat, White", "retailer": "Wayfair", "price": 389.00, "total": 389.00, "status": "Delivered" },
+            { "date": "Sep 28, 2025", "product": "Schluter KERDI Shower Waterproofing Membrane Kit, 54 sq ft", "retailer": "Amazon", "price": 87.00, "total": 94.00, "status": "Delivered" },
+            { "date": "Sep 15, 2025", "product": "Delta Trinsic Single Handle Bathroom Faucet, Matte Black", "retailer": "Amazon", "price": 156.00, "total": 156.00, "status": "Delivered" },
+            { "date": "Sep 10, 2025", "product": "Mapei Flexcolor CQ Ready-to-Use Grout, Warm Gray, 9 lbs (2-pack)", "retailer": "Amazon", "price": 48.00, "total": 48.00, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "📈",
+              "title": "High-velocity renovation spend",
+              "text": "Eliza has spent $1,748 across 6 purchases in just 5 weeks, all concentrated in bathroom fixtures — a spending velocity that signals an active, time-bound renovation project rather than casual browsing."
+            },
+            {
+              "icon": "🎯",
+              "title": "Methodical project sequencer",
+              "text": "Purchase sequencing reveals a disciplined renovator: waterproofing first, then structural fixtures, then finishing pieces. Eliza is approximately 3–4 weeks in and approaching the 'visible finish' stage — mirrors, lighting, and accessories are next."
+            },
+            {
+              "icon": "💡",
+              "title": "High-value finishing spend ahead",
+              "text": "With a $649 vanity and $412 shower door already purchased elsewhere, Eliza is now in the market for bathroom mirrors, wall lighting, towel bars, and storage — the accessible price-point categories where IKEA excels."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Eliza browsing 'bathroom mirrors' on IKEA.com",
+            "brand_action": "IKEA retargets Eliza 1 week later with an ad for the STOCKHOLM mirror she viewed",
+            "missed_opportunity": "Treated as a single-item browser, not a high-intent renovation customer with $1,700+ already invested"
+          },
+          "with_ario": {
+            "what_brand_sees": "Eliza is 3 weeks into a full bathroom renovation, has spent $1,748 on major fixtures at Wayfair, and is now shopping for finishing touches",
+            "brand_action": "Eliza receives a personalized 'Complete Your Bathroom' homepage module featuring mirrors, lighting, towel bars, bath mats, and storage baskets with a 'Renovation Bundle' discount",
+            "value_unlocked": "IKEA becomes Eliza's renovation partner for the final $400–$800 in finishing purchases — and earns first consideration for her next room project"
+          },
+          "strategic_questions": [
+            "How many of your current 'single item browsers' are actually mid-project renovators with $1,500+ already spent elsewhere?",
+            "What would your email segmentation look like if you could identify life stage AND project stage simultaneously?",
+            "How much revenue are you leaving on the table by targeting based on on-site behavior alone?"
+          ]
+        },
+        {
+          "id": "maria_ikea",
+          "name": "Maria Chen",
+          "age": 29,
+          "income": "$72,000",
+          "location": "Austin, TX",
+          "lifestage": "New Parent",
+          "signal": "Maria has a baby on the way and is setting up a nursery",
+          "avatar": "MC",
+          "orders": 7,
+          "totalSpent": 612,
+          "avgOrder": 87,
+          "retailers": ["Amazon"],
+          "purchases": [
+            { "date": "Nov 3, 2025", "product": "Amazon Baby Registry Welcome Box", "retailer": "Amazon", "price": 0.00, "total": 0.00, "status": "Delivered" },
+            { "date": "Oct 28, 2025", "product": "WaterWipes Sensitive Baby Wipes, 99.9% Water, 720 Count (12-pack)", "retailer": "Amazon", "price": 38.99, "total": 38.99, "status": "Delivered" },
+            { "date": "Oct 22, 2025", "product": "NIOIIKIT Nursery Rocking Chair, Teddy Upholstered Glider Rocker, Gray", "retailer": "Amazon", "price": 71.16, "total": 71.16, "status": "Delivered" },
+            { "date": "Oct 18, 2025", "product": "Hatch Rest+ Baby Sound Machine, Night Light, White Noise, Wi-Fi", "retailer": "Amazon", "price": 89.99, "total": 89.99, "status": "Delivered" },
+            { "date": "Oct 10, 2025", "product": "Frida Baby NoseFrida Saline Snot Sucker Starter Kit", "retailer": "Amazon", "price": 24.99, "total": 24.99, "status": "Delivered" },
+            { "date": "Oct 5, 2025", "product": "Burt's Bees Baby Organic Cotton Starter Gift Set, 5-piece Layette", "retailer": "Amazon", "price": 32.99, "total": 32.99, "status": "Delivered" },
+            { "date": "Sep 28, 2025", "product": "Prenatal Vitamins with DHA, Folic Acid & Iron, 90-day supply", "retailer": "Amazon", "price": 28.99, "total": 28.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "👶",
+              "title": "Confirmed new parent signal",
+              "text": "A Baby Registry creation, prenatal vitamins, newborn wipes, and a nursery glider purchased in a 5-week window is a near-certain signal that a baby is arriving within 3 months. Maria is not a 'bedroom furniture shopper' — she is a new parent outfitting a nursery."
+            },
+            {
+              "icon": "🎯",
+              "title": "Multi-year high-value customer segment",
+              "text": "Maria's purchases indicate she is in a 'nesting phase' that typically lasts 6–9 months and is followed by 3–5 years of child-related purchasing. Brands that earn her trust now will benefit from a long, high-frequency relationship."
+            },
+            {
+              "icon": "💡",
+              "title": "Dresser purchase is a changing table decision",
+              "text": "Maria browsing an 8-drawer HEMNES dresser on IKEA.com is almost certainly a nursery furniture decision, not a bedroom upgrade. The right merchandising context — nursery bundles, changing table toppers, toy storage — could double the basket size."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Maria browsing 'HEMNES 8-drawer dresser' on IKEA.com",
+            "brand_action": "IKEA's system tags Maria as a 'bedroom furniture shopper' and retargets with dresser and wardrobe ads",
+            "missed_opportunity": "Completely misses the nursery context — no baby category offers, no new parent lifecycle marketing, no bundle opportunity"
+          },
+          "with_ario": {
+            "what_brand_sees": "Maria has a baby arriving within 3 months, has already purchased a glider, wipes, and sound machine from Amazon, and is now shopping for nursery storage",
+            "brand_action": "Maria sees a 'Nursery Starter' collection on her IKEA homepage featuring the dresser with a changing table topper, SMÅGÖRA crib, SUNDVIK toy chest, and LURVIG soft toys — positioned as a complete first room",
+            "value_unlocked": "Average nursery project at IKEA is $600–$900 vs. a single dresser at $249 — Ario data enables 3x basket expansion with perfect contextual relevance"
+          },
+          "strategic_questions": [
+            "What percentage of your dresser buyers are actually new parents purchasing nursery furniture?",
+            "If you could identify life stage at the moment of first site visit, how would your onboarding email series change?",
+            "How many new parent customers are you losing to Target and Amazon because you're not recognizing the signal?"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "ashley",
+      "name": "Ashley Furniture",
+      "category": "Home & Kitchen",
+      "logo": "🛋️",
+      "tagline": "Furniture & home décor",
+      "color": "#8B1A1A",
+      "personas": [
+        {
+          "id": "brian",
+          "name": "Brian Kowalski",
+          "age": 41,
+          "income": "$118,000",
+          "location": "Columbus, OH",
+          "lifestage": "Man Cave Builder",
+          "signal": "Brian is furnishing a dedicated entertainment space",
+          "avatar": "BK",
+          "orders": 4,
+          "totalSpent": 891,
+          "avgOrder": 223,
+          "retailers": ["Wayfair", "Amazon"],
+          "purchases": [
+            { "date": "Oct 2, 2025", "product": "Sunbury TV Stand for TVs up to 78\", Distressed Brown Oak", "retailer": "Wayfair", "price": 186.37, "total": 186.37, "status": "Delivered" },
+            { "date": "Sep 1, 2025", "product": "Hoschton TV Stand for TVs up to 78\", with Fireplace Insert Option", "retailer": "Wayfair", "price": 296.38, "total": 296.38, "status": "Delivered" },
+            { "date": "Aug 20, 2025", "product": "Modern LED Pendant Chandelier, 6-Light, Black & Gold, Adjustable Height", "retailer": "Amazon", "price": 208.31, "total": 208.31, "status": "Delivered" },
+            { "date": "Aug 5, 2025", "product": "VIVO Ultra-Wide Triple Monitor Desk Mount, Heavy Duty, Black", "retailer": "Amazon", "price": 89.99, "total": 89.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "🎮",
+              "title": "Dedicated space project underway",
+              "text": "Two TV stand purchases within 30 days — one returned and upgraded — combined with a statement chandelier and monitor mount signals a deliberate, high-investment room build rather than casual furniture replacement. Brian is creating a defined entertainment zone."
+            },
+            {
+              "icon": "📈",
+              "title": "High-intent prospect for $5,000+ total room sale",
+              "text": "The anchor items (TV stand, lighting, tech mount) are in place. The category logic predicts Brian now needs a sectional sofa, leather power recliner, entertainment bar table, and media storage — a potential $3,000–$6,000 Ashley Furniture basket."
+            },
+            {
+              "icon": "🎯",
+              "title": "Aesthetic profile: industrial-modern masculine",
+              "text": "Black and gold chandelier, distressed oak TV stand, ultra-wide monitor setup — Brian's purchases reveal a consistent 'industrial man cave' aesthetic. Merchandising recommendations should align with this visual identity, not generic living room suggestions."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Brian browsing 'coffee tables' on ashleyfurniture.com",
+            "brand_action": "Ashley retargets Brian with coffee table and side table ads the following week",
+            "missed_opportunity": "Missed the entire 'man cave build' context — no sectional offer, no entertainment bundle, single-item retargeting on a multi-thousand dollar opportunity"
+          },
+          "with_ario": {
+            "what_brand_sees": "Brian has already purchased two TV stands and a statement chandelier from Wayfair, indicating an entertainment room project with a defined industrial aesthetic",
+            "brand_action": "Brian receives a 'Build Your Entertainment Room' personalized email featuring the Julio Power Reclining Sectional, Brekford Bar Table Set, and Tannat Barn Door Media Console — with a 'Room Bundle' discount",
+            "value_unlocked": "Single coffee table retarget: ~$400 potential. Full entertainment room bundle: $4,500–$6,000 potential — Ario data enables 10x revenue opportunity identification"
+          },
+          "strategic_questions": [
+            "How many of your furniture browsers are actually mid-room-project buyers who just haven't found their anchor piece yet?",
+            "What's the revenue impact if you could identify 'whole room' buyers at their first site visit?",
+            "How does your average basket size change when you market to project intent vs. item intent?"
+          ]
+        },
+        {
+          "id": "maria_ashley",
+          "name": "Maria Chen",
+          "age": 29,
+          "income": "$72,000",
+          "location": "Austin, TX",
+          "lifestage": "New Parent",
+          "signal": "Maria is a new parent buying a dresser to use as a changing table",
+          "avatar": "MC",
+          "orders": 5,
+          "totalSpent": 487,
+          "avgOrder": 97,
+          "retailers": ["Amazon"],
+          "purchases": [
+            { "date": "Nov 3, 2025", "product": "Amazon Baby Registry Welcome Box", "retailer": "Amazon", "price": 0.00, "total": 0.00, "status": "Delivered" },
+            { "date": "Oct 28, 2025", "product": "WaterWipes Sensitive Baby Wipes, 99.9% Water, 720 Count", "retailer": "Amazon", "price": 38.99, "total": 38.99, "status": "Delivered" },
+            { "date": "Oct 22, 2025", "product": "NIOIIKIT Nursery Rocking Chair, Teddy Upholstered Glider, Gray", "retailer": "Amazon", "price": 71.16, "total": 71.16, "status": "Delivered" },
+            { "date": "Oct 18, 2025", "product": "Hatch Rest+ Baby Sound Machine & Night Light, Wi-Fi, White", "retailer": "Amazon", "price": 89.99, "total": 89.99, "status": "Delivered" },
+            { "date": "Sep 28, 2025", "product": "Prenatal Vitamins with DHA, Folic Acid & Iron, 90-day supply", "retailer": "Amazon", "price": 28.99, "total": 28.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "👶",
+              "title": "New parent — not a bedroom furniture buyer",
+              "text": "Baby registry, prenatal vitamins, nursery glider, and sound machine purchased in a 5-week span is a strong signal that Maria's dresser interest is nursery-motivated. This completely changes how Ashley should merchandise and follow up."
+            },
+            {
+              "icon": "💡",
+              "title": "Changing table topper is the missing product",
+              "text": "Most new parents repurpose a dresser as a changing table for 18–24 months. Ashley carrying a changing table topper that fits the Deanlow dresser, or a nursery-configured bundle, could be the deciding factor in the purchase."
+            },
+            {
+              "icon": "🎯",
+              "title": "Gateway to a 5-year customer relationship",
+              "text": "A new parent entering the market represents 5–7 years of furniture purchasing ahead: nursery, toddler bed, big kid room, family room upgrades. Winning Maria now with nursery-aware merchandising creates a lifetime customer, not a one-time sale."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Maria browsing 'Deanlow 6-drawer dresser' on ashleyfurniture.com",
+            "brand_action": "Ashley targets Maria as a 'bedroom furniture shopper' and sends a follow-up email with dresser and nightstand options",
+            "missed_opportunity": "Misses the nursery context entirely — no new parent positioning, no changing topper offer, no lifecycle marketing"
+          },
+          "with_ario": {
+            "what_brand_sees": "Maria has a baby arriving in ~3 months and is setting up a nursery — the dresser browse is a changing table decision",
+            "brand_action": "Maria receives a 'Nursery Ready' email with the Deanlow dresser bundled with a changing topper, the Silo Creek crib, and a soft rug — positioned as 'everything for baby's first room'",
+            "value_unlocked": "Dresser-only sale: $389. Nursery bundle: $1,100–$1,400. Plus Maria becomes a high-LTV customer as her family grows."
+          },
+          "strategic_questions": [
+            "Do you know what percentage of your dresser buyers are new parents vs. bedroom upgraders?",
+            "How would your product development roadmap change if you knew nursery was a top use case for your dressers?",
+            "What would a new-parent loyalty program look like if you could identify the signal at the first purchase?"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "sephora",
+      "name": "Sephora",
+      "category": "Beauty",
+      "logo": "💄",
+      "tagline": "Beauty & personal care retail",
+      "color": "#000000",
+      "personas": [
+        {
+          "id": "derek",
+          "name": "Derek Pham",
+          "age": 38,
+          "income": "$150,000",
+          "location": "New York, NY",
+          "lifestage": "Premium Male Groomer",
+          "signal": "Derek spends $2,985/year on beauty from Amazon — Sephora doesn't know he exists",
+          "avatar": "DP",
+          "orders": 12,
+          "totalSpent": 2985,
+          "avgOrder": 249,
+          "retailers": ["Amazon"],
+          "purchases": [
+            { "date": "Oct 20, 2025", "product": "NIRA Precision Laser Device for Anti-Aging, At-Home Use, Black", "retailer": "Amazon", "price": 199.00, "total": 199.00, "status": "Delivered" },
+            { "date": "Sep 15, 2025", "product": "Dyson Supersonic Hair Dryer, Fuchsia/Iron (Men's Edition)", "retailer": "Amazon", "price": 328.00, "total": 328.00, "status": "Delivered" },
+            { "date": "Aug 30, 2025", "product": "Brickell Men's Advanced Anti-Aging Routine — Full Kit", "retailer": "Amazon", "price": 235.00, "total": 235.00, "status": "Delivered" },
+            { "date": "Aug 10, 2025", "product": "Foreo Luna 4 Men Facial Cleansing & Firming Device, Charcoal Black", "retailer": "Amazon", "price": 199.00, "total": 199.00, "status": "Delivered" },
+            { "date": "Jul 22, 2025", "product": "Philips Norelco 9000 Prestige Electric Shaver with SmartClick", "retailer": "Amazon", "price": 179.99, "total": 179.99, "status": "Delivered" },
+            { "date": "Jun 5, 2025", "product": "iS Clinical Active Serum, 1 oz — Anti-Aging, Brightening", "retailer": "Amazon", "price": 135.00, "total": 135.00, "status": "Delivered" },
+            { "date": "May 18, 2025", "product": "Jack Black Double-Duty Face Moisturizer SPF 20, 6.7 oz", "retailer": "Amazon", "price": 42.00, "total": 42.00, "status": "Delivered" },
+            { "date": "Apr 10, 2025", "product": "Wahl Professional 5-Star Barber Combo — Clipper & Trimmer Set", "retailer": "Amazon", "price": 196.00, "total": 196.00, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "💰",
+              "title": "$3K annual beauty spender — invisible to Sephora",
+              "text": "Derek has spent $2,985 on premium beauty and grooming from Amazon in the past 12 months — including laser devices, Dyson tools, and clinical serums. He has never visited sephora.com. This is a high-value customer Sephora doesn't know exists."
+            },
+            {
+              "icon": "🔍",
+              "title": "High returns signal unmet needs",
+              "text": "Derek has returned $1,095 worth of products — 37% of his spend — indicating he is actively seeking but not consistently finding the right products. This is a significant acquisition opportunity: Sephora's expert curation and try-before-you-buy model directly addresses his frustration."
+            },
+            {
+              "icon": "🎯",
+              "title": "Premium tier — price is not the barrier",
+              "text": "With a $249 average order and purchases including a $328 Dyson and $199 laser device, Derek is clearly not price-sensitive. His Amazon purchases are a product-discovery problem, not a budget problem. The right Sephora offer converts him immediately."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Derek is not in Sephora's system. He has never visited sephora.com.",
+            "brand_action": "No action — Derek is invisible. Sephora has no way to know he exists or that he's spending $3K/year on beauty elsewhere.",
+            "missed_opportunity": "A $3,000/year premium beauty customer is being captured entirely by Amazon, with no awareness or outreach from Sephora"
+          },
+          "with_ario": {
+            "what_brand_sees": "Derek spends $2,985/year on premium men's beauty from Amazon, has a 37% return rate indicating product dissatisfaction, and has no Sephora relationship",
+            "brand_action": "Sephora targets Derek with a 'Men's Grooming Edit' acquisition campaign offering a curated trial kit of Clinique for Men, Lab Series, and Tom Ford Grooming — with a Sephora Beauty Insider signup offer and free expert consultation",
+            "value_unlocked": "Converting Derek from an Amazon buyer to a Sephora Beauty Insider is worth $2,500–$3,500/year in customer revenue, with high potential for loyalty program engagement"
+          },
+          "strategic_questions": [
+            "How large is the male premium grooming segment buying from Amazon that has never engaged with Sephora?",
+            "What does your acquisition cost look like when you can target by proven spend behavior rather than demographic proxies?",
+            "How would your men's grooming assortment strategy change with visibility into what men actually buy?"
+          ]
+        },
+        {
+          "id": "sofia",
+          "name": "Sofia Reyes",
+          "age": 31,
+          "income": "$68,000",
+          "location": "Miami, FL",
+          "lifestage": "Pregnancy Life Stage",
+          "signal": "Sofia is pregnant — her beauty needs and safety requirements have changed completely",
+          "avatar": "SR",
+          "orders": 9,
+          "totalSpent": 428,
+          "avgOrder": 48,
+          "retailers": ["Amazon", "Target"],
+          "purchases": [
+            { "date": "Nov 5, 2025", "product": "Pink Stork Prenatal Vitamins with DHA, Folate, Iron, Ginger, 90ct", "retailer": "Amazon", "price": 34.99, "total": 34.99, "status": "Delivered" },
+            { "date": "Oct 30, 2025", "product": "Belly Bandit Original Bamboo Belly Wrap, Postpartum Binder", "retailer": "Amazon", "price": 54.99, "total": 54.99, "status": "Delivered" },
+            { "date": "Oct 15, 2025", "product": "Mustela Maternity Stretch Marks Body Cream + Serum, 2-piece", "retailer": "Amazon", "price": 42.00, "total": 42.00, "status": "Delivered" },
+            { "date": "Oct 8, 2025", "product": "Earth Mama Pregnancy Body Butter, Calendula-enriched, 8 oz", "retailer": "Amazon", "price": 18.99, "total": 18.99, "status": "Delivered" },
+            { "date": "Sep 22, 2025", "product": "The Honest Company Truly Calming Lavender Bubble Bath, 12 oz (3-pack)", "retailer": "Target", "price": 24.99, "total": 24.99, "status": "Delivered" },
+            { "date": "Sep 12, 2025", "product": "THINX Period Underwear for Maternity & Postpartum, 3-pack", "retailer": "Amazon", "price": 62.00, "total": 62.00, "status": "Delivered" },
+            { "date": "Aug 28, 2025", "product": "Burt's Bees Mama Bee Nourishing Body Oil, 100% Natural", "retailer": "Target", "price": 14.99, "total": 14.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "🤰",
+              "title": "Life stage shift — beauty needs completely transformed",
+              "text": "Prenatal vitamins, stretch mark creams, belly wraps, and maternity-safe products purchased over 10 weeks confirm Sofia is in her second trimester. Her entire beauty routine has shifted to pregnancy-safe formulations — a completely different product set from her pre-pregnancy purchases."
+            },
+            {
+              "icon": "⚠️",
+              "title": "Safety is the #1 purchase filter",
+              "text": "Pregnant consumers research ingredient safety obsessively. Retinol, salicylic acid, and certain preservatives are now off-limits. Sephora's ability to curate a 'pregnancy-safe' edit with expert guidance is a significant value-add that Amazon cannot match."
+            },
+            {
+              "icon": "🌱",
+              "title": "Multi-year lifecycle customer opportunity",
+              "text": "Pregnancy is the beginning of a 3-stage beauty lifecycle: prenatal (pregnancy-safe), postnatal (recovery, nursing-safe), and early parenthood (quick, low-maintenance routines). Brands that serve Sofia now build a 3–5 year relationship through major personal transformation."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Sofia has not purchased from Sephora in 3 months (she paused her routine). Standard churn flag.",
+            "brand_action": "Sephora sends a 'We miss you' win-back email with 15% off her previously purchased moisturizer — a retinol product that is contraindicated during pregnancy",
+            "missed_opportunity": "Not only missed the pregnancy signal, but actively recommended a product she cannot safely use — a potential trust-damaging moment"
+          },
+          "with_ario": {
+            "what_brand_sees": "Sofia is pregnant (approx. second trimester based on purchase pattern), has paused her normal beauty routine, and is actively buying pregnancy-safe products from Amazon and Target",
+            "brand_action": "Sephora sends a 'Your Glow, Safely' pregnancy-safe beauty guide featuring Pai Skincare, First Aid Beauty, and Kiehl's pregnancy-safe lines — with a note from a Sephora beauty expert and a 'Safe for Baby' ingredient filter in the app",
+            "value_unlocked": "Transforms a churn risk into a deeply loyal customer by demonstrating care at her most vulnerable life moment — Sofia becomes a Sephora advocate during the highest-sharing period of her life (pregnancy)"
+          },
+          "strategic_questions": [
+            "Do you know how many of your lapsed customers are pregnant vs. truly churned?",
+            "What would a pregnancy-safe product curation experience mean for your app engagement and expert consultation bookings?",
+            "How does your brand show up during the most transformative beauty moments in a customer's life?"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "hunterdouglas",
+      "name": "Hunter Douglas",
+      "category": "Home & Kitchen",
+      "logo": "🪟",
+      "tagline": "Window coverings & treatments",
+      "color": "#1B4332",
+      "personas": [
+        {
+          "id": "carol",
+          "name": "Carol Martinez",
+          "age": 52,
+          "income": "$145,000",
+          "location": "Scottsdale, AZ",
+          "lifestage": "Whole Home Refresh",
+          "signal": "Carol is renovating multiple rooms simultaneously with a premium aesthetic",
+          "avatar": "CM",
+          "orders": 8,
+          "totalSpent": 4280,
+          "avgOrder": 535,
+          "retailers": ["Wayfair", "Amazon", "Pottery Barn"],
+          "purchases": [
+            { "date": "Oct 25, 2025", "product": "Pottery Barn Belgian Linen Blackout Curtain Panel, 96\", White (4 panels)", "retailer": "Pottery Barn", "price": 598.00, "total": 598.00, "status": "Delivered" },
+            { "date": "Oct 10, 2025", "product": "Restoration Hardware Belgian Track Arm Sofa, Performance Fabric, Cloud", "retailer": "Wayfair", "price": 1890.00, "total": 1890.00, "status": "Delivered" },
+            { "date": "Sep 28, 2025", "product": "Serena & Lily Riviera Dining Chair, Set of 2, Natural Woven Seagrass", "retailer": "Wayfair", "price": 698.00, "total": 698.00, "status": "Delivered" },
+            { "date": "Sep 15, 2025", "product": "Lutron Caseta Wireless Smart Dimmer Switch, 5-pack with Hub", "retailer": "Amazon", "price": 189.99, "total": 189.99, "status": "Delivered" },
+            { "date": "Aug 30, 2025", "product": "Visual Comfort & Co. Chapman Large Pendant Light, Natural Brass", "retailer": "Wayfair", "price": 445.00, "total": 445.00, "status": "Delivered" },
+            { "date": "Aug 12, 2025", "product": "Anthropologie Textured Cloudloom Wool Area Rug, 9x12, Ivory", "retailer": "Wayfair", "price": 459.00, "total": 459.00, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "🏡",
+              "title": "High-end whole-home renovation in progress",
+              "text": "Carol has spent $4,280 on premium home furnishings across Pottery Barn, Wayfair, and Amazon in 10 weeks — sofa, dining chairs, pendant lighting, rugs, and smart dimmer systems. This is a coordinated, whole-home design project with a clear luxury aesthetic."
+            },
+            {
+              "icon": "💰",
+              "title": "Window treatment budget is likely $3,000–$8,000",
+              "text": "Based on her purchase scale and aesthetic (Pottery Barn curtains, Visual Comfort lighting, premium rugs), Carol is an ideal Hunter Douglas customer. The average whole-home Hunter Douglas project for a home at this spend level is $4,500–$8,000."
+            },
+            {
+              "icon": "🎯",
+              "title": "Smart home integrations are a priority",
+              "text": "The Lutron Caseta smart dimmer system purchase signals Carol wants smart, integrated home tech. Hunter Douglas PowerView motorized shades integrate natively with Lutron systems — a product-specific connection that could be the conversion trigger."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Carol has not visited hunterdouglas.com. She is not in the system.",
+            "brand_action": "No action. Hunter Douglas relies on dealer referrals and search ads. Carol is not searching 'window treatments' yet.",
+            "missed_opportunity": "Carol will eventually need window treatments for her entire home — without proactive outreach, she'll buy wherever she's redirected by her interior designer or the first Google search result"
+          },
+          "with_ario": {
+            "what_brand_sees": "Carol is mid-renovation on a premium whole-home project and has just purchased Lutron smart dimmers — a direct integration opportunity for PowerView motorized shades",
+            "brand_action": "Hunter Douglas targets Carol with a 'Your Home, Fully Integrated' campaign showcasing PowerView motorized shades with Lutron compatibility, directing her to a local showroom consultation with a design specialist",
+            "value_unlocked": "Average Hunter Douglas whole-home project: $5,500. Carol's project scope suggests a $6,000–$9,000 potential. Identifying her at the renovation midpoint — before window decisions are made — is the entire opportunity."
+          },
+          "strategic_questions": [
+            "How many premium home renovation projects happen in your target market each year that you have no visibility into?",
+            "What's the revenue impact of reaching a customer before they've made their window treatment decision vs. after?",
+            "How would your showroom consultation model scale if you could proactively identify ideal prospects mid-renovation?"
+          ]
+        },
+        {
+          "id": "james",
+          "name": "James & Priya Okafor",
+          "age": 45,
+          "income": "$195,000",
+          "location": "Charlotte, NC",
+          "lifestage": "New Home Buyer",
+          "signal": "James and Priya just purchased a new home and need everything",
+          "avatar": "JO",
+          "orders": 11,
+          "totalSpent": 6840,
+          "avgOrder": 622,
+          "retailers": ["Wayfair", "Amazon", "Home Depot"],
+          "purchases": [
+            { "date": "Nov 1, 2025", "product": "Home Depot — 2 gallons Benjamin Moore Regal Select Interior Paint, White Dove OC-17", "retailer": "Home Depot", "price": 98.00, "total": 196.00, "status": "Delivered" },
+            { "date": "Oct 28, 2025", "product": "Dyson V15 Detect Cordless Vacuum, Absolute (New Home Essential)", "retailer": "Amazon", "price": 549.99, "total": 549.99, "status": "Delivered" },
+            { "date": "Oct 25, 2025", "product": "KitchenAid Artisan Series 5-Qt Stand Mixer, Contour Silver", "retailer": "Amazon", "price": 379.99, "total": 379.99, "status": "Delivered" },
+            { "date": "Oct 20, 2025", "product": "Parachute Classic Sateen Sheet Set, King, White (2 sets)", "retailer": "Amazon", "price": 318.00, "total": 318.00, "status": "Delivered" },
+            { "date": "Oct 15, 2025", "product": "West Elm Andes Deep Sectional Sofa, Performance Velvet, Ink Blue", "retailer": "Wayfair", "price": 2199.00, "total": 2199.00, "status": "Delivered" },
+            { "date": "Oct 8, 2025", "product": "Rejuvenation Eastlake 5-Light Chandelier, Aged Brass", "retailer": "Wayfair", "price": 628.00, "total": 628.00, "status": "Delivered" },
+            { "date": "Oct 1, 2025", "product": "Nest Learning Thermostat, 4th Gen, Stainless Steel (3-pack)", "retailer": "Amazon", "price": 507.00, "total": 507.00, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "🏠",
+              "title": "Recent home purchase — every room needs everything",
+              "text": "Paint, vacuum, stand mixer, luxury sheets, a sectional, and smart thermostats all purchased in a 30-day window is a textbook new homeowner signature. James and Priya are outfitting an entire new home with a clear premium budget and no existing window treatments."
+            },
+            {
+              "icon": "⏰",
+              "title": "First 90 days are the decision window",
+              "text": "New homeowners make 70–80% of their first-home purchase decisions within 90 days of move-in. At day 30, James and Priya have covered furniture, appliances, and paint — window treatments are almost certainly on the list. Reaching them now is critical."
+            },
+            {
+              "icon": "🔌",
+              "title": "Smart home priority — 3 Nest thermostats",
+              "text": "Purchasing 3 Nest thermostats in their first month signals a whole-home smart integration mindset. Hunter Douglas PowerView motorized shades, which integrate with Nest and Google Home, are a natural fit for this customer's technology preference."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "James and Priya have never visited hunterdouglas.com.",
+            "brand_action": "No action. The home purchase happened — Hunter Douglas has no visibility.",
+            "missed_opportunity": "New homeowner window treatment decision is made and executed — Hunter Douglas loses to whoever shows up first in search or is recommended by their real estate agent"
+          },
+          "with_ario": {
+            "what_brand_sees": "James and Priya moved into a new home 30 days ago, have already spent $6,800 on premium furnishings, and have a Nest smart home system — perfectly matched for PowerView motorized shades",
+            "brand_action": "Hunter Douglas sends a 'Welcome Home' offer with a PowerView consultation, Google Home/Nest compatibility highlight, and a link to schedule a complimentary in-home design appointment within their first 60 days",
+            "value_unlocked": "A whole-home new construction project averages $7,000–$12,000 in Hunter Douglas window treatments. This is the single best prospect type — identified at exactly the right moment."
+          },
+          "strategic_questions": [
+            "How many new homeowners in your target markets are you missing because you have no signal until they search for 'blinds'?",
+            "What would a partnership with real estate data + cross-retailer purchase signals mean for your new-homeowner acquisition funnel?",
+            "If you could reach new homeowners within 30 days of move-in, what would that do to your showroom consultation volume?"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "stitchfix",
+      "name": "Stitch Fix",
+      "category": "Clothing, Shoes & Jewelry",
+      "logo": "👗",
+      "tagline": "Personalized styling service",
+      "color": "#2D6A4F",
+      "personas": [
+        {
+          "id": "priya",
+          "name": "Priya Nair",
+          "age": 33,
+          "income": "$96,000",
+          "location": "Chicago, IL",
+          "lifestage": "Career Wardrobe Upgrader",
+          "signal": "Priya just got promoted and is rebuilding her professional wardrobe",
+          "avatar": "PN",
+          "orders": 9,
+          "totalSpent": 1840,
+          "avgOrder": 204,
+          "retailers": ["Amazon", "Nordstrom", "Target"],
+          "purchases": [
+            { "date": "Oct 28, 2025", "product": "Nordstrom — Theory Admiral Crepe Blazer, Ivory, Size 4", "retailer": "Nordstrom", "price": 395.00, "total": 395.00, "status": "Delivered" },
+            { "date": "Oct 20, 2025", "product": "Nordstrom — Vince Camuto Punto Knit Sheath Dress, Navy, Size S", "retailer": "Nordstrom", "price": 138.00, "total": 138.00, "status": "Delivered" },
+            { "date": "Oct 12, 2025", "product": "Amazon — Quay Australia High Key Mini Sunglasses, Gold/Brown", "retailer": "Amazon", "price": 55.00, "total": 55.00, "status": "Delivered" },
+            { "date": "Oct 5, 2025", "product": "Nordstrom — Sam Edelman Hazel Ankle Strap Heeled Sandal, Black, Size 7.5", "retailer": "Nordstrom", "price": 99.95, "total": 99.95, "status": "Delivered" },
+            { "date": "Sep 22, 2025", "product": "Amazon — Brass Plum Open Edit Seamless Crew Bodysuit, 3-pack, Black/White/Nude", "retailer": "Amazon", "price": 52.00, "total": 52.00, "status": "Delivered" },
+            { "date": "Sep 10, 2025", "product": "Target — A New Day Tailored Straight Leg Ankle Pant, 2-pack, Black & Khaki", "retailer": "Target", "price": 56.00, "total": 56.00, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "💼",
+              "title": "Work wardrobe rebuild — high intent, scattered execution",
+              "text": "Priya has spent $1,840 on professional clothing across Nordstrom, Amazon, and Target in 7 weeks — blazers, dresses, heels, and structured pants. This is a deliberate wardrobe rebuild, but spread across multiple retailers with no cohesive styling strategy. The perfect Stitch Fix customer."
+            },
+            {
+              "icon": "🎯",
+              "title": "Mixed-tier buyer seeking curation, not discounts",
+              "text": "Priya mixes a $395 Theory blazer with $56 Target pants — she is a value-conscious professional who knows quality but needs help making it all work together. Stitch Fix's core proposition — expert curation for your lifestyle and budget — is exactly what she is trying to replicate manually."
+            },
+            {
+              "icon": "📈",
+              "title": "High annual styling spend available",
+              "text": "At $1,840 in 7 weeks, Priya's annual fashion spend is on track for $12,000+. Even capturing 20% of that through Stitch Fix Fix boxes represents a $2,400/year relationship — with strong upsell potential through Freestyle direct purchases."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Priya has not signed up for Stitch Fix. She is not in the system.",
+            "brand_action": "No action — Priya is invisible unless she discovers Stitch Fix through an ad or a friend referral.",
+            "missed_opportunity": "Priya is actively spending $1,800+ on professional fashion across 3 retailers simultaneously — a textbook acquisition target who is doing manually what Stitch Fix does better"
+          },
+          "with_ario": {
+            "what_brand_sees": "Priya is on a professional wardrobe-building spree across Nordstrom, Target, and Amazon — mixing high and low, buying blazers and structured separates, with no cohesive strategy",
+            "brand_action": "Stitch Fix targets Priya with a 'Your Work Wardrobe, Curated' acquisition campaign featuring a style quiz linked to her actual purchase history style signals and a first Fix at 25% off with a 'career upgrade' angle",
+            "value_unlocked": "Converting Priya from a scattered multi-retailer buyer to a Fix subscriber captures $2,000–$3,000/year in annual spend — and Stitch Fix's data flywheel improves her fixes over time, increasing retention"
+          },
+          "strategic_questions": [
+            "How many of your ideal customers are actively spending on fashion right now — but building their wardrobe manually across 5 different retailers?",
+            "What would your acquisition cost per customer look like if you could target by revealed fashion spend behavior?",
+            "How does your styling algorithm improve when it has cross-retailer data to understand a customer's full wardrobe, not just what they bought from you?"
+          ]
+        },
+        {
+          "id": "lauren",
+          "name": "Lauren Kim",
+          "age": 27,
+          "income": "$58,000",
+          "location": "Portland, OR",
+          "lifestage": "Life Event Dresser",
+          "signal": "Lauren has a major life event coming up and is building an occasion wardrobe for the first time",
+          "avatar": "LK",
+          "orders": 7,
+          "totalSpent": 892,
+          "avgOrder": 127,
+          "retailers": ["Amazon", "Nordstrom", "ASOS"],
+          "purchases": [
+            { "date": "Nov 2, 2025", "product": "Amazon — Ever-Pretty A-Line Formal Bridesmaid Dress, Dusty Rose, Size 6 (returned)", "retailer": "Amazon", "price": 48.99, "total": 48.99, "status": "Returned" },
+            { "date": "Oct 25, 2025", "product": "ASOS — ASOS DESIGN Midi Slip Dress, Satin, Champagne, US 6", "retailer": "ASOS", "price": 65.00, "total": 65.00, "status": "Delivered" },
+            { "date": "Oct 18, 2025", "product": "Nordstrom — Vince Camuto Ankle Strap Heeled Sandal, Champagne, Size 7", "retailer": "Nordstrom", "price": 119.00, "total": 119.00, "status": "Delivered" },
+            { "date": "Oct 10, 2025", "product": "Amazon — Spanx OnCore High-Waisted Brief, Soft Nude, Size M", "retailer": "Amazon", "price": 36.00, "total": 36.00, "status": "Delivered" },
+            { "date": "Sep 28, 2025", "product": "Amazon — Kate Spade Glitter Small Earrings, Gold/Crystal (3 bridesmaid sets)", "retailer": "Amazon", "price": 138.00, "total": 138.00, "status": "Delivered" },
+            { "date": "Sep 15, 2025", "product": "Amazon — Bridal Party Proposal Box Set, Bridesmaid Gift, Blush (5 pack)", "retailer": "Amazon", "price": 89.99, "total": 89.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "💍",
+              "title": "Wedding event signal — as maid of honor or bridesmaid",
+              "text": "Bridesmaid proposal gift sets, matching earrings in multiples, formal dress with a return, and champagne-toned occasion shoes — Lauren is in the middle of a wedding event prep cycle. This is a finite but high-frequency fashion purchasing moment."
+            },
+            {
+              "icon": "🔄",
+              "title": "High return rate signals fit and style uncertainty",
+              "text": "Lauren has returned a formal dress and ordered multiple variations of occasion-wear, suggesting she lacks confidence in styling formal events. This is Stitch Fix's strongest value proposition — expert guidance for someone who doesn't know what works for them."
+            },
+            {
+              "icon": "🌱",
+              "title": "Gateway to a long-term styling relationship",
+              "text": "At 27, Lauren is at the beginning of a decade of life events — weddings, career milestones, travel, early parenthood. A great experience at this moment of styling uncertainty creates a loyal customer through her highest-growth years."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Lauren is not in the Stitch Fix system.",
+            "brand_action": "No action.",
+            "missed_opportunity": "Lauren is actively struggling to build an occasion wardrobe and spending $900 doing it poorly — exactly the customer Stitch Fix was built for"
+          },
+          "with_ario": {
+            "what_brand_sees": "Lauren is prepping for a wedding role, has returned a formal dress, and is piecing together an occasion wardrobe without a clear styling strategy",
+            "brand_action": "Stitch Fix targets Lauren with an 'Occasion Ready' Fix offer — a curated box of 5 pieces styled specifically for wedding guest and bridal party occasions, with a personal stylist note and a size-confidence guarantee",
+            "value_unlocked": "Lauren converts from a frustrated multi-retailer occasion shopper to a confident Fix subscriber — and the positive experience at a memorable life moment creates a long-term relationship"
+          },
+          "strategic_questions": [
+            "How many customers are spending hundreds of dollars across Amazon, ASOS, and Nordstrom trying to solve styling problems that a single Fix box would solve better?",
+            "What life events are your best customers experiencing right now that your acquisition campaigns are missing?",
+            "How does cross-retailer data change your understanding of why customers first seek out a personal styling service?"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "rejuvenation",
+      "name": "Rejuvenation",
+      "category": "Home & Kitchen",
+      "logo": "💡",
+      "tagline": "Period-authentic lighting & hardware",
+      "color": "#6B4226",
+      "personas": [
+        {
+          "id": "tom",
+          "name": "Tom Bergstrom",
+          "age": 48,
+          "income": "$162,000",
+          "location": "Portland, OR",
+          "lifestage": "Historic Home Restorer",
+          "signal": "Tom is restoring a pre-1940s home with period-authentic fixtures",
+          "avatar": "TB",
+          "orders": 7,
+          "totalSpent": 3240,
+          "avgOrder": 463,
+          "retailers": ["Amazon", "Home Depot", "Etsy"],
+          "purchases": [
+            { "date": "Oct 22, 2025", "product": "Etsy — Hand-forged Iron Door Hinges, Surface Mount, Blacksmith Made (4 sets)", "retailer": "Etsy", "price": 220.00, "total": 220.00, "status": "Delivered" },
+            { "date": "Oct 10, 2025", "product": "Home Depot — DAP Drydex Spackling, White, 16 oz (12-pack, wood lath repair)", "retailer": "Home Depot", "price": 89.99, "total": 89.99, "status": "Delivered" },
+            { "date": "Sep 28, 2025", "product": "Amazon — Rust-Oleum Restore Deck & Concrete 10X, Slate, 1 gal (exterior porch)", "retailer": "Amazon", "price": 149.00, "total": 149.00, "status": "Delivered" },
+            { "date": "Sep 12, 2025", "product": "Amazon — Rockler Antique Brass Cabinet Knobs, 1.25\", 25-pack (kitchen restoration)", "retailer": "Amazon", "price": 68.00, "total": 68.00, "status": "Delivered" },
+            { "date": "Aug 30, 2025", "product": "Etsy — Original Craftsman Bungalow Pendant Light, Hammered Copper, 1920s Repro", "retailer": "Etsy", "price": 445.00, "total": 445.00, "status": "Delivered" },
+            { "date": "Aug 15, 2025", "product": "Home Depot — Old Millwork Crown Molding, Poplar, 9/16\" x 4\", 16-ft (8 pieces)", "retailer": "Home Depot", "price": 312.00, "total": 312.00, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "🏛️",
+              "title": "Historic restoration project — premium authenticity buyer",
+              "text": "Hand-forged iron hinges from Etsy, 1920s-reproduction copper pendant, antique brass cabinet hardware, wood lath repair compound — Tom is not just renovating, he is restoring a historic home to period accuracy. This is Rejuvenation's core customer: someone who will pay for authentic over generic."
+            },
+            {
+              "icon": "💡",
+              "title": "Lighting is the next major purchase category",
+              "text": "Tom has sourced one pendant from Etsy but has not yet found a systematic lighting solution for the home. With 8–15 light fixtures typical in a full restoration, and Rejuvenation's catalog being the definitive source for Craftsman and Arts & Crafts period lighting, Tom is a near-perfect acquisition target."
+            },
+            {
+              "icon": "🎯",
+              "title": "Etsy buyer is Rejuvenation's lost customer",
+              "text": "The fact that Tom is sourcing reproduction lighting from Etsy makers rather than Rejuvenation indicates he either doesn't know about Rejuvenation or hasn't been reached. These are not competing brands — Rejuvenation offers better warranty, consistency, and UL certification at comparable price points."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Tom has not visited rejuvenation.com.",
+            "brand_action": "No action. Tom continues sourcing period fixtures from Etsy makers and Amazon hardware sellers.",
+            "missed_opportunity": "An ideal whole-home lighting and hardware customer — with $3,000+ already invested in a period restoration — buys from Etsy instead of Rejuvenation because he was never reached"
+          },
+          "with_ario": {
+            "what_brand_sees": "Tom is restoring a historic home, sourcing period-authentic hardware from Etsy, and has already purchased a reproduction Craftsman pendant — an ideal Rejuvenation customer who doesn't know we exist",
+            "brand_action": "Rejuvenation targets Tom with 'The Definitive Resource for Craftsman & Bungalow Restoration' — a catalog mailer and email campaign featuring their period lighting collections, UL-listed reproduction hardware, and a complimentary design consultation for historic homes",
+            "value_unlocked": "A whole-home historic lighting project at Rejuvenation averages $8,000–$15,000. Tom is mid-project and actively spending — this is the exact moment to capture him before he sources everything from Etsy."
+          },
+          "strategic_questions": [
+            "How many of your ideal customers — period restoration buyers — are sourcing from Etsy because they haven't discovered Rejuvenation?",
+            "What's the value of identifying a historic home restorer before they've made their major fixture decisions?",
+            "How would your catalog strategy change if you could target by restoration project signals rather than generic home interest?"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "energizer",
+      "name": "Energizer",
+      "category": "Electronics",
+      "logo": "🔋",
+      "tagline": "Batteries & portable power",
+      "color": "#FF6600",
+      "personas": [
+        {
+          "id": "marcus",
+          "name": "Marcus Thompson",
+          "age": 36,
+          "income": "$88,000",
+          "location": "Denver, CO",
+          "lifestage": "Techie — High-Drain Device Owner",
+          "signal": "Marcus buys Amazon Basics for remotes but switches to Energizer for his high-end electronics",
+          "avatar": "MT",
+          "orders": 14,
+          "totalSpent": 1840,
+          "avgOrder": 131,
+          "retailers": ["Amazon"],
+          "purchases": [
+            { "date": "Oct 15, 2025", "product": "Sony WH-1000XM5 Wireless Headphones, Industry Leading Noise Canceling, Black", "retailer": "Amazon", "price": 279.99, "total": 279.99, "status": "Delivered" },
+            { "date": "Oct 15, 2025", "product": "Energizer Ultimate Lithium AA Batteries, 8-pack (co-purchased with headphones)", "retailer": "Amazon", "price": 15.98, "total": 15.98, "status": "Delivered" },
+            { "date": "Sep 8, 2025", "product": "Amazon Basics AA Performance Alkaline Batteries, 48-pack", "retailer": "Amazon", "price": 14.99, "total": 14.99, "status": "Delivered" },
+            { "date": "Aug 20, 2025", "product": "Xbox Series X Wireless Controller, Carbon Black", "retailer": "Amazon", "price": 59.99, "total": 59.99, "status": "Delivered" },
+            { "date": "Aug 20, 2025", "product": "Energizer Ultimate Lithium AA Batteries, 12-pack (co-purchased with Xbox controller)", "retailer": "Amazon", "price": 22.99, "total": 22.99, "status": "Delivered" },
+            { "date": "Jul 12, 2025", "product": "Nikon Z30 Mirrorless Camera, Body Only, 20.9 MP", "retailer": "Amazon", "price": 699.99, "total": 699.99, "status": "Delivered" },
+            { "date": "Jul 12, 2025", "product": "Energizer Ultimate Lithium AA Batteries, 24-pack (co-purchased with Nikon camera)", "retailer": "Amazon", "price": 36.99, "total": 36.99, "status": "Delivered" },
+            { "date": "Jun 1, 2025", "product": "Amazon Basics AA Performance Alkaline Batteries, 48-pack (TV remotes, misc)", "retailer": "Amazon", "price": 14.99, "total": 14.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "🔋",
+              "title": "Premiumization halo effect — confirmed",
+              "text": "Marcus buys Amazon Basics for low-drain household items but switches to Energizer Ultimate Lithium every time he purchases a premium electronic device (Sony headphones, Xbox controller, Nikon camera). The data proves a psychological tiering: high-value gadgets earn high-value batteries."
+            },
+            {
+              "icon": "🎯",
+              "title": "Trigger-based buying — electronics purchase = battery opportunity",
+              "text": "Three confirmed Energizer purchases all occurred on the exact same day as a major electronic device purchase. Marcus doesn't pre-stock Energizer — he buys it reactively when a new device demands the best. Energizer's growth is directly tied to electronics purchase moments."
+            },
+            {
+              "icon": "📊",
+              "title": "Amazon Basics is winning the non-premium category",
+              "text": "Marcus's Amazon Basics bulk purchases (48-packs) are for household remotes and low-drain devices. Energizer is not competing for this wallet — and shouldn't. The strategic question is: how does Energizer capture Marcus every time he buys a new premium device?"
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Marcus purchased Energizer AA 8-pack 3 times in the past year. Standard repeat buyer.",
+            "brand_action": "Energizer re-targets Marcus with a generic 'Stock up on batteries' email promotion with 20% off a 20-pack.",
+            "missed_opportunity": "Completely misses the trigger insight — Marcus buys Energizer with devices, not in isolation. A 'stock up' campaign is the wrong message at the wrong moment."
+          },
+          "with_ario": {
+            "what_brand_sees": "Marcus buys Energizer reactively every time he purchases a high-value electronic device. He has just purchased a Sony camera — he will need batteries within 24–48 hours.",
+            "brand_action": "Energizer targets Marcus within 24 hours of the Nikon camera purchase with a 'Your new camera deserves the best power' message — Energizer Ultimate Lithium promoted specifically for high-performance cameras, with a subscription offer for auto-replenishment",
+            "value_unlocked": "Trigger-based battery marketing converts at 3–5x the rate of generic promotions. Capturing Marcus at the electronics purchase moment with a relevant, device-specific message builds the brand association that drives long-term loyalty."
+          },
+          "strategic_questions": [
+            "What percentage of your battery purchases are co-purchased with a specific device category — and are you marketing to those device buyers proactively?",
+            "How many electronics purchases happen each day in your target market that represent an Energizer buying trigger you're currently missing?",
+            "What does a trigger-based marketing program look like at scale — where every premium electronics purchase becomes an Energizer acquisition moment?"
+          ]
+        },
+        {
+          "id": "sarah_e",
+          "name": "Sarah Oconnell",
+          "age": 34,
+          "income": "$74,000",
+          "location": "Minneapolis, MN",
+          "lifestage": "Parent — Emergency Buyer",
+          "signal": "Sarah buys batteries at 9pm after a toy dies — she is the classic panic-window buyer",
+          "avatar": "SO",
+          "orders": 11,
+          "totalSpent": 487,
+          "avgOrder": 44,
+          "retailers": ["Amazon"],
+          "purchases": [
+            { "date": "Nov 2, 2025", "product": "Energizer MAX AA Batteries, 24-pack (ordered 9:14 PM)", "retailer": "Amazon", "price": 19.99, "total": 19.99, "status": "Delivered" },
+            { "date": "Nov 1, 2025", "product": "LeapFrog LeapStart Interactive Learning System, Green (new toy trigger)", "retailer": "Amazon", "price": 38.99, "total": 38.99, "status": "Delivered" },
+            { "date": "Oct 15, 2025", "product": "Energizer MAX AA Batteries, 16-pack (ordered 8:47 PM)", "retailer": "Amazon", "price": 14.99, "total": 14.99, "status": "Delivered" },
+            { "date": "Oct 14, 2025", "product": "Melissa & Doug Shape Sorting Cube (new toy trigger)", "retailer": "Amazon", "price": 24.99, "total": 24.99, "status": "Delivered" },
+            { "date": "Sep 20, 2025", "product": "Amazon Basics AA Batteries, 48-pack (bulk stock-up)", "retailer": "Amazon", "price": 14.99, "total": 14.99, "status": "Delivered" },
+            { "date": "Sep 2, 2025", "product": "VTech Sit-to-Stand Learning Walker (new toy trigger)", "retailer": "Amazon", "price": 43.99, "total": 43.99, "status": "Delivered" },
+            { "date": "Sep 1, 2025", "product": "Energizer MAX AA Batteries, 20-pack (ordered 9:31 PM)", "retailer": "Amazon", "price": 16.99, "total": 16.99, "status": "Delivered" }
+          ],
+          "insights": [
+            {
+              "icon": "⏰",
+              "title": "Evening panic window buyer — 100% triggered by toy purchases",
+              "text": "Every single Energizer purchase by Sarah has occurred between 8:00–10:00 PM and within 24 hours of a toy purchase. This is not a planned battery purchase — it's a reactive emergency buy triggered by a toy with no batteries included. The pattern is completely predictable."
+            },
+            {
+              "icon": "🧸",
+              "title": "Toy co-purchase is the Energizer trigger",
+              "text": "Sarah has purchased 4 battery-powered toys and 4 Energizer battery packs in a near 1:1 pattern. The insight is clear: Energizer should be in the 'Frequently Bought Together' for every battery-powered toy on Amazon — and should target Sarah the moment she buys a toy."
+            },
+            {
+              "icon": "📦",
+              "title": "Subscription opportunity — end the panic buying cycle",
+              "text": "Sarah's pattern shows she consistently runs out of batteries and buys in emergency mode. An Energizer Subscribe & Save offer for automatic monthly AA delivery would eliminate the panic moment, increase brand loyalty, and guarantee recurring revenue."
+            }
+          ],
+          "without_ario": {
+            "what_brand_sees": "Sarah is a repeat Energizer MAX buyer, average order $17, orders every 4–6 weeks.",
+            "brand_action": "Energizer sends a generic re-order reminder 5 weeks after her last battery purchase.",
+            "missed_opportunity": "Completely misses the toy-purchase trigger pattern — and the 5-week reminder arrives 3 weeks after the next panic buy has already happened"
+          },
+          "with_ario": {
+            "what_brand_sees": "Sarah buys Energizer batteries within 24 hours of every battery-powered toy purchase, always in the evening, always in panic mode. She just bought a LeapFrog learning toy at 8:15 PM.",
+            "brand_action": "Energizer targets Sarah at 7:00 PM on toy-purchase days with a 'Batteries included? Probably not. Energizer MAX, delivered tomorrow.' message — plus a Subscribe & Save offer promising she'll never run out again",
+            "value_unlocked": "Converting Sarah from a panic buyer to a Subscribe & Save subscriber increases her annual Energizer revenue from $65 to $180/year and eliminates Amazon Basics as a substitute option during stock-up moments"
+          },
+          "strategic_questions": [
+            "How many of your battery purchases are panic-driven, and how much of that panic spend goes to Amazon Basics because it's in stock?",
+            "What would a toy co-purchase targeting program look like — where every battery-powered toy sale becomes an Energizer acquisition moment?",
+            "How does Subscribe & Save conversion change when you offer it at the exact moment of pain (battery emergency) vs. as a generic promotion?"
+          ]
+        }
+      ]
+    }
+
+  ],
+
+  "useCases": [
+    {
+      "id": "lifestage",
+      "title": "Life Stage Targeting",
+      "description": "Identify customers at major life moments — new parent, new home, career change — before competitors do",
+      "icon": "🌱",
+      "brands": ["ikea", "ashley", "sephora", "stitchfix"],
+      "example": "Maria is buying a dresser. Ario knows she's a new parent. You know to show her the nursery bundle."
+    },
+    {
+      "id": "competitive",
+      "title": "Competitive Intelligence",
+      "description": "See what your customers are buying from competitors — and what that tells you about unmet needs",
+      "icon": "🔍",
+      "brands": ["sephora", "energizer", "hunterdouglas"],
+      "example": "Derek spends $3K/year on beauty from Amazon. Sephora doesn't know he exists. Ario does."
+    },
+    {
+      "id": "personalization",
+      "title": "Smarter Personalization",
+      "description": "Ground every marketing action in real purchase behavior, not demographic proxies or on-site browsing",
+      "icon": "🎯",
+      "brands": ["ikea", "ashley", "energizer", "stitchfix"],
+      "example": "Brian browsed coffee tables. Ario knows he's building a man cave. The right offer is a $5,000 entertainment room bundle."
+    }
+  ],
+
+  "categories": [
+    "Appliances", "Arts, Crafts & Sewing", "Automotive", "Beauty", "Books",
+    "Cell Phones & Accessories", "Clothing, Shoes & Jewelry", "Electronics",
+    "Grocery & Gourmet Food", "Health & Personal Care", "Home & Kitchen",
+    "Luggage & Travel Gear", "Musical Instruments", "Office Products",
+    "Patio, Lawn & Garden", "Pet Supplies", "Sports & Outdoors",
+    "Tools & Home Improvement", "Toys & Games"
+  ],
+
+  "scanMessages": [
+    "Connecting to verified shopper network...",
+    "Authenticating data permissions...",
+    "Scanning Amazon purchase records...",
+    "Cross-referencing Wayfair transaction data...",
+    "Analyzing Target purchase history...",
+    "Identifying behavioral signals...",
+    "Matching to your target category...",
+    "Generating customer profiles...",
+    "Building behavioral insights...",
+    "Finalizing panelist selections..."
+  ]
+}

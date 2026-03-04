@@ -258,6 +258,7 @@
     transition: all 0.2s ease;
     display: flex; flex-direction: column; align-items: center; gap: 12px;
     text-align: center;
+    position: relative;
   }
   .brand-card:hover, .brand-card.selected {
     border-color: var(--ario-blue);
@@ -618,6 +619,7 @@
 
   /* USE CASE TILES */
   .usecase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .usecase-grid.five-up { grid-template-columns: repeat(3, 1fr); }
   .usecase-card {
     background: var(--ario-white);
     border: 1.5px solid var(--ario-border);
@@ -626,11 +628,17 @@
     cursor: pointer;
     transition: all 0.25s ease;
     animation: fadeUp 0.4s ease both;
+    position: relative;
   }
   .usecase-card:hover {
     border-color: var(--ario-blue);
     box-shadow: var(--shadow-blue);
     transform: translateY(-3px);
+  }
+  .usecase-card.selected {
+    border-color: var(--ario-blue);
+    border-width: 2px;
+    background: var(--ario-blue-light);
   }
   .usecase-icon { font-size: 28px; margin-bottom: 12px; }
   .usecase-title { font-size: 16px; font-weight: 700; color: var(--ario-navy); margin-bottom: 8px; }
@@ -641,6 +649,13 @@
     padding: 10px 14px; border-radius: var(--radius);
     font-style: italic; line-height: 1.5;
     border-left: 2px solid var(--ario-blue);
+  }
+  .new-badge {
+    position: absolute; top: 14px; right: 14px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.8px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #2356F6, #6B8AFF);
+    color: white; padding: 3px 9px; border-radius: 100px;
   }
 
   /* CTA */
@@ -829,11 +844,80 @@
     .insights-grid { grid-template-columns: 1fr; }
     .usecase-grid { grid-template-columns: 1fr; }
     .persona-grid { grid-template-columns: 1fr; }
-    .hero-stats { gap: 24px; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; justify-content: center; }
     .profile-header { flex-direction: column; align-items: flex-start; }
     .profile-stats { flex-direction: row; }
     .nav { padding: 0 16px; }
     .container { padding: 0 16px; }
+    .page { padding: 32px 0; }
+    .hero { padding: 56px 20px 48px; }
+    .mode-section { padding: 40px 16px; }
+
+    /* Stepper: collapse to progress dots on mobile */
+    .stepper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      width: 100%;
+      border-radius: 12px;
+      padding: 8px 12px;
+      justify-content: flex-start;
+    }
+    .stepper::-webkit-scrollbar { display: none; }
+    .step { padding: 6px 10px; font-size: 12px; white-space: nowrap; }
+    .step-divider { min-width: 12px; }
+
+    /* Tables: horizontal scroll on mobile */
+    .table-card { overflow-x: auto; }
+    table { min-width: 560px; }
+
+    /* Before/After toggle: full width */
+    .ba-toggle { width: 100%; }
+    .ba-btn { flex: 1; text-align: center; font-size: 13px; padding: 10px 12px; }
+
+    /* Panelist tabs: scroll horizontally */
+    .panelist-tabs {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      flex-wrap: nowrap;
+      padding-bottom: 4px;
+    }
+    .panelist-tabs::-webkit-scrollbar { display: none; }
+    .panelist-tab { white-space: nowrap; min-width: 120px; }
+
+    /* Questions card padding */
+    .questions-card { padding: 24px 20px; }
+    .scan-screen { padding: 28px 20px; }
+
+    /* Profile stats inline on mobile */
+    .profile-stats { gap: 20px; margin-top: 12px; }
+    .profile-stat { text-align: left; }
+
+    /* CTA section */
+    .cta-section { padding: 36px 20px; }
+    .cta-title { font-size: 22px; }
+
+    /* Brand grid: 2 columns on mobile */
+    .brand-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .brand-card { padding: 18px 12px; }
+    .brand-emoji { font-size: 26px; }
+
+    /* Disclaimer banner */
+    .disclaimer-banner { padding: 10px 16px; font-size: 11px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title { font-size: 30px; letter-spacing: -1px; }
+    .hero-subtitle { font-size: 16px; }
+    .hero-stat-num { font-size: 26px; }
+    .brand-grid { grid-template-columns: repeat(2, 1fr); }
+    .scan-metrics { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .scan-metric { padding: 14px; }
+    .scan-metric-value { font-size: 22px; }
+    .mode-card { padding: 24px 20px; }
+    .btn-row { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
   }
 </style>
 </head>
@@ -1191,11 +1275,76 @@ const DATA = {
         },
       ],
     },
+    {
+      id: "textnow", name: "TextNow", emoji: "📱", category: "Media & Advertising",
+      color: "#6C47FF", tagline: "Free mobile phone & messaging, 250M+ downloads",
+      personas: [
+        {
+          id: "jaylen", name: "Jaylen Brooks", age: 26, income: "$44,000",
+          location: "Atlanta, GA", lifestage: "Young Parent — Household Buyer",
+          signal: "Jaylen's Walmart purchases reveal a household profile TextNow's ad platform has never seen",
+          avatar: "JB", orders: 8, totalSpent: 298, avgOrder: 37,
+          retailers: ["Walmart"],
+          purchases: [
+            { date: "Oct 30, 2025", product: "Great Value Breakfast Bundle — Eggs, Bacon, OJ, Pancake Mix", retailer: "Walmart", price: 22.87, status: "Delivered" },
+            { date: "Oct 18, 2025", product: "Similac 360 Total Care Infant Formula, 30.8 oz (3-pack)", retailer: "Walmart", price: 89.97, status: "Delivered" },
+            { date: "Oct 10, 2025", product: "Huggies Little Snugglers Baby Diapers, Size 2, 168-count", retailer: "Walmart", price: 44.97, status: "Delivered" },
+            { date: "Sep 28, 2025", product: "Pampers Sensitive Baby Wipes, 9-pack (504 count)", retailer: "Walmart", price: 29.98, status: "Delivered" },
+            { date: "Sep 15, 2025", product: "Hot Wheels 20-Car Gift Pack (toddler gift)", retailer: "Walmart", price: 18.97, status: "Delivered" },
+            { date: "Sep 1, 2025", product: "Luvs Ultra Leakguards Diapers, Size 4, 140-count", retailer: "Walmart", price: 38.97, status: "Delivered" },
+            { date: "Aug 20, 2025", product: "Gerber Graduates Lil Crunchies Snacks, Variety 12-pack", retailer: "Walmart", price: 23.94, status: "Delivered" },
+            { date: "Aug 5, 2025", product: "Energizer MAX AA Batteries, 20-pack", retailer: "Walmart", price: 28.44, status: "Delivered" },
+          ],
+          insights: [
+            { icon: "👶", title: "Household profile: young parent — infant and toddler", text: "Infant formula, two diaper sizes, baby wipes, toddler snacks, and Hot Wheels in one basket reveals a household with two young children. This profile is completely invisible to TextNow's ad platform, which only sees Jaylen's in-app behavior and age demographics." },
+            { icon: "🛒", title: "High-frequency CPG buyer — commands premium ad inventory", text: "Jaylen shops Walmart weekly, concentrating spend in consumables (formula, diapers, food). CPG advertisers like P&G, Kimberly-Clark, and Similac pay 3–5x CPM premiums to reach verified household buyers vs. demographic proxies." },
+            { icon: "📊", title: "Real purchase data transforms his entire ad profile", text: "TextNow currently serves Jaylen generic demographic ads. Ario's Walmart data transforms him into: 'household with infant + toddler, weekly CPG buyer, value-oriented.' This segment commands premium CPMs and dramatically improves advertiser ROI." },
+          ],
+          without: { sees: "Jaylen, 26, Atlanta. Uses TextNow for free calls. Shown gaming app ads and auto promotions based on age/gender demographics. CPM: $1.20. CTR: 0.4%.", action: "TextNow serves generic young-male ad inventory. Jaylen ignores the ads. Advertisers see low ROI.", missed: "Jaylen is a weekly CPG household buyer with an infant and toddler — the highest-value demographic for consumer goods advertisers. His ad profile is completely wrong." },
+          with: { sees: "Jaylen is a young parent of two (infant + toddler), weekly Walmart shopper, high-frequency CPG buyer averaging $37/trip in consumables.", action: "TextNow serves Jaylen targeted ads from Huggies, Gerber, and Walmart Grocery. CPM lifts to $4.80. CTR rises to 1.9%. Jaylen sees ads that are genuinely useful to his family.", value: "+30% higher ad relevance and CTR. +20% uplift in ad revenue per user. Users see fewer, more relevant ads — improving retention and platform value to advertisers." },
+          questions: ["What percentage of your users have a household profile your ad platform has never seen — because you only know how they communicate, not how they shop?", "If you could offer advertisers verified household purchase behavior instead of demographic proxies, what premium CPM could you command?", "How does user satisfaction change when the ads someone sees reflect their actual life — instead of a demographic guess?"],
+        },
+      ],
+    },
+    {
+      id: "rejuvenation2", name: "Rejuvenation", emoji: "💡", category: "Home Design",
+      color: "#7C4A1E", tagline: "Period-authentic lighting, hardware & design",
+      personas: [
+        {
+          id: "webb", name: "Marcus & Dana Webb", age: 43, income: "$178,000",
+          location: "Seattle, WA", lifestage: "Design Consultation Candidate",
+          signal: "Marcus is returning faucets and lights from Wayfair — a buyer with real budget and no clear direction yet",
+          avatar: "MW", orders: 9, totalSpent: 2840, avgOrder: 316,
+          retailers: ["Wayfair", "Home Depot"],
+          purchases: [
+            { date: "Nov 1, 2025", product: "Moen Align Brushed Gold Kitchen Faucet (returned)", retailer: "Wayfair", price: 289.00, status: "Returned" },
+            { date: "Oct 22, 2025", product: "Delta Trinsic Pull-Down Kitchen Faucet, Matte Black (returned)", retailer: "Wayfair", price: 312.00, status: "Returned" },
+            { date: "Oct 15, 2025", product: "Kraus Bolden Commercial Style Kitchen Faucet, Stainless", retailer: "Wayfair", price: 199.00, status: "Delivered" },
+            { date: "Oct 8, 2025", product: "Progress Lighting 5-Light Chandelier, Antique Bronze (returned)", retailer: "Wayfair", price: 348.00, status: "Returned" },
+            { date: "Sep 28, 2025", product: "Elk Lighting 6-Light Kitchen Island Pendant, Oil Rubbed Bronze", retailer: "Wayfair", price: 428.00, status: "Delivered" },
+            { date: "Sep 15, 2025", product: "Sherwin-Williams Emerald Paint, Naval SW 6244, 3 gallons", retailer: "Home Depot", price: 192.00, status: "Delivered" },
+            { date: "Sep 5, 2025", product: "Schlage Camelot Handleset + 3 matching knobs, Aged Bronze", retailer: "Home Depot", price: 310.00, status: "Delivered" },
+            { date: "Aug 22, 2025", product: "Temporary Cellular Shades, builder-grade placeholder, 4-pack", retailer: "Wayfair", price: 178.00, status: "Delivered" },
+            { date: "Aug 10, 2025", product: "Shiplap Wallpaper, Whitewash finish, 3 rolls", retailer: "Wayfair", price: 87.00, status: "Delivered" },
+          ],
+          insights: [
+            { icon: "🔄", title: "Serial returner = buyer with budget and an unmet vision", text: "Two faucets returned, a chandelier returned — all within 60 days. Marcus and Dana have a vision they cannot find on Wayfair. This is the highest-intent buyer Rejuvenation exists for: real taste, real budget, and a problem generic retail cannot solve." },
+            { icon: "🎨", title: "Aesthetic is emerging: aged bronze, naval blue, natural materials", text: "Aged bronze hardware, oil-rubbed bronze pendant, naval blue paint, shiplap wallpaper — the palette is American traditional with organic warmth. Rejuvenation's Craftsman and Arts & Crafts collections are a near-perfect match." },
+            { icon: "💡", title: "Lighting is the unresolved anchor decision", text: "The returned chandelier and builder-grade placeholder shades signal Marcus has not locked in his lighting direction. With 8–12 fixtures typical in a home of this scale, a free design consultation could close the entire lighting category for Rejuvenation." },
+          ],
+          without: { sees: "Marcus has visited rejuvenation.com twice but not purchased. Standard mid-funnel visitor.", action: "Rejuvenation retargets Marcus with a generic New Arrivals email and 10% off promo.", missed: "A high-intent, high-budget buyer actively auditioning styles gets a discount email instead of the expert guidance that would actually convert him." },
+          with: { sees: "Marcus has returned 3 fixtures from Wayfair, is using placeholder builder shades, and has an emerging aged-bronze and naval aesthetic. He is a design consultation candidate at peak buying uncertainty.", action: "Rejuvenation sends a personalized 'Let us find your look' email — curated Aged Brass lighting edit matched to his emerging aesthetic, with a free 30-min design consultation offer: 'Your home deserves more than a Wayfair return.'", value: "A whole-home Rejuvenation project averages $9,000–$15,000. Marcus is at maximum buying intent and maximum uncertainty. A consultation converts him. A discount does not." },
+          questions: ["How many of your site visitors are actively returning fixtures from competitors — and are waiting for expert guidance, not a coupon?", "What is the conversion rate difference between a personalized design consultation offer and a standard promotional email for a buyer at this life stage?", "If you could identify high-budget serial returners before they make their permanent fixture decisions, what would that do to your average project value?"],
+        },
+      ],
+    },
   ],
   useCases: [
     { id: "lifestage", title: "Life Stage Targeting", icon: "🌱", desc: "Identify customers at major life moments — new parent, new home, career change — before competitors do", example: "Maria is buying a dresser. Ario knows she's a new parent. You know to show her the nursery bundle.", brands: ["ikea","ashley","sephora","stitchfix"] },
     { id: "competitive", title: "Competitive Intelligence", icon: "🔍", desc: "See what your customers are buying from competitors — and what that tells you about unmet needs", example: "Derek spends $3K/year on beauty from Amazon. Sephora doesn't know he exists. Ario does.", brands: ["sephora","energizer","hunterdouglas"] },
     { id: "personalization", title: "Smarter Personalization", icon: "🎯", desc: "Ground every marketing action in real purchase behavior, not demographic proxies or on-site browsing", example: "Brian browsed coffee tables. Ario knows he's building a man cave. The right offer is a $5,000 entertainment room bundle.", brands: ["ikea","ashley","energizer","stitchfix"] },
+    { id: "adtargeting", title: "Ad Targeting Uplift", icon: "📊", desc: "Transform generic demographic ad profiles into real household purchase signals — and command premium CPMs", example: "Jaylen looks like a generic 26-year-old male. Ario knows he's a young parent buying formula and diapers every week.", brands: ["textnow"] },
+    { id: "consultation", title: "Design Consultation Intercept", icon: "🎨", desc: "Identify high-budget buyers at peak uncertainty and convert them with expert guidance before they settle for less", example: "Marcus is returning fixtures from Wayfair. Ario knows he has budget and no direction. A consultation closes the deal.", brands: ["rejuvenation2","hunterdouglas"] },
   ],
   scanMessages: [
     "Connecting to verified shopper network...",
@@ -1203,6 +1352,7 @@ const DATA = {
     "Scanning Amazon purchase records...",
     "Cross-referencing Wayfair transaction data...",
     "Analyzing Target & Nordstrom purchase history...",
+    "Scanning Walmart purchase records...",
     "Identifying behavioral signals...",
     "Matching to your target category...",
     "Generating customer profiles...",
@@ -1272,7 +1422,7 @@ function Landing({ onSelectMode }) {
             Ario gives brands customer-consented, SKU-level purchase data from other retailers — so you can see the full picture, act on real behavior, and personalize at a depth that was never before possible.
           </p>
           <div className="hero-stats">
-            {[['7', 'Brand scenarios'], ['13', 'Customer personas'], ['100+', 'Purchase records'], ['3', 'Use case lenses']].map(([n, l]) => (
+            {[['9', 'Brand scenarios'], ['15', 'Customer personas'], ['100+', 'Purchase records'], ['5', 'Use case lenses']].map(([n, l]) => (
               <div key={l}>
                 <div className="hero-stat-num">{n}</div>
                 <div className="hero-stat-label">{l}</div>
@@ -1325,6 +1475,7 @@ function ModeBrandStory({ onBack }) {
       <div className="brand-grid">
         {DATA.brands.map(b => (
           <div key={b.id} className={`brand-card ${brand?.id === b.id ? 'selected' : ''}`} onClick={() => setBrand(b)}>
+            {(b.id === 'textnow' || b.id === 'rejuvenation2') && <div className="new-badge">New</div>}
             <div className="brand-emoji">{b.emoji}</div>
             <div className="brand-name">{b.name}</div>
             <div className="brand-cat">{b.category}</div>
@@ -1417,11 +1568,12 @@ function ModeUseCase({ onBack }) {
     <div className="container page">
       <div className="page-title">What do you want to accomplish?</div>
       <div className="page-subtitle">Choose a use case and we'll show you the most relevant customer story.</div>
-      <div className="usecase-grid" style={{marginBottom: 40}}>
+      <div className="usecase-grid five-up" style={{marginBottom: 40}}>
         {DATA.useCases.map((uc, i) => (
           <div key={uc.id} className={`usecase-card ${selected?.id === uc.id ? 'selected' : ''}`}
-            style={{animationDelay: `${i*0.1}s`, border: selected?.id === uc.id ? '2px solid var(--ario-blue)' : ''}}
+            style={{animationDelay: `${i*0.1}s`}}
             onClick={() => { setSelected(uc); setBrand(null); setPersona(null); }}>
+            {(uc.id === 'adtargeting' || uc.id === 'consultation') && <div className="new-badge">New</div>}
             <div className="usecase-icon">{uc.icon}</div>
             <div className="usecase-title">{uc.title}</div>
             <div className="usecase-desc">{uc.desc}</div>
@@ -1511,7 +1663,9 @@ function ModeSimulate({ onBack }) {
     'Electronics': 'energizer', 'Toys & Games': 'energizer',
     'Clothing, Shoes & Jewelry': 'stitchfix',
     'Sports & Outdoors': 'energizer', 'Appliances': 'ikea',
-    'Arts, Crafts & Sewing': 'rejuvenation',
+    'Arts, Crafts & Sewing': 'rejuvenation2',
+    'Cell Phones & Accessories': 'textnow',
+    'Grocery & Gourmet Food': 'textnow',
   };
 
   const handleStart = () => {

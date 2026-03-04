@@ -1084,6 +1084,31 @@ const DATA = {
           with: { sees: "Sofia is pregnant (approx. second trimester), has paused her normal beauty routine, and is actively buying pregnancy-safe products from Amazon and Target", action: "Sephora sends a 'Your Glow, Safely' pregnancy-safe beauty guide featuring Pai Skincare, First Aid Beauty, and Kiehl's pregnancy-safe lines — with a 'Safe for Baby' ingredient filter in the app", value: "Transforms a churn risk into a deeply loyal customer by demonstrating care at her most vulnerable life moment — Sofia becomes a Sephora advocate during the highest-sharing period of her life" },
           questions: ["Do you know how many of your lapsed customers are pregnant vs. truly churned?", "What would a pregnancy-safe product curation experience mean for your app engagement and expert consultation bookings?", "How does your brand show up during the most transformative beauty moments in a customer's life?"],
         },
+        {
+          id: "chloe", name: "Chloe Yamamoto", age: 29, income: "$64,000",
+          location: "Portland, OR", lifestage: "Loyal Buyer — Silently Defected to Amazon",
+          signal: "Chloe's Sephora spend dropped 80% over 3 years — Ario shows she never stopped buying, just switched to Amazon",
+          avatar: "CY", orders: 8, totalSpent: 312, avgOrder: 39,
+          retailers: ["Amazon"],
+          purchases: [
+            { date: "Jul 15, 2025", product: "Kérastase Elixir Ultime Original Hair Oil, 3.4 oz — RESTOCK", retailer: "Amazon", price: 52.00, status: "Delivered" },
+            { date: "Nov 3, 2024", product: "Kérastase Elixir Ultime Original Hair Oil, 3.4 oz — RESTOCK", retailer: "Amazon", price: 52.00, status: "Delivered" },
+            { date: "Nov 2, 2024", product: "Lab Series Multi-Action Face Wash, 3.4 oz — 3rd Amazon restock", retailer: "Amazon", price: 26.00, status: "Delivered" },
+            { date: "Aug 18, 2024", product: "The Ordinary Multi-Peptide Serum for Hair Density, 2 oz", retailer: "Amazon", price: 19.50, status: "Delivered" },
+            { date: "Jun 5, 2024", product: "Kérastase Mini Elixir Ultime Hair Oil Serum, 1.7 oz", retailer: "Amazon", price: 40.00, status: "Delivered" },
+            { date: "Apr 2, 2024", product: "Hourglass Vanish Airbrush Concealer Crème, Warm Ivory", retailer: "Amazon", price: 46.00, status: "Delivered" },
+            { date: "Jan 14, 2024", product: "Lab Series Multi-Action Face Wash, 3.4 oz — 2nd Amazon restock", retailer: "Amazon", price: 26.00, status: "Delivered" },
+            { date: "Sep 28, 2023", product: "Lab Series Multi-Action Face Wash, 3.4 oz — 1st Amazon restock", retailer: "Amazon", price: 26.00, status: "Delivered" },
+          ],
+          insights: [
+            { icon: "🔄", title: "Chloe didn't stop loving Sephora brands — she just stopped buying them at Sephora", text: "Chloe's Sephora spend fell from $380/yr in 2021 to under $80 by 2024. Ario reveals why: she has restocked Kérastase hair oil twice on Amazon and repurchased Lab Series face wash three times. The products are identical, the price is the same — Amazon is simply where she naturally shops 5x per week." },
+            { icon: "📉", title: "The defection pattern is invisible in first-party data", text: "Inside Sephora's CRM, Chloe looks like a churned customer — last Sephora purchase was 14 months ago. In reality, she is an active, loyal buyer of Sephora brands spending $312/year on Amazon. The category relationship is intact. The channel relationship is broken." },
+            { icon: "💡", title: "Auto-replenishment is the fix — and the window is closing", text: "Chloe restocks Kérastase approximately every 8 months and Lab Series every 4–5 months. This is a predictable cadence Sephora's auto-replenish program could own. But every Amazon restock makes the habit more entrenched. The intervention needs to happen before her next reorder." },
+          ],
+          without: { sees: "Chloe purchased from Sephora 14 months ago. Flagged as lapsed/churned. Low re-engagement probability.", action: "Chloe gets a standard 'We miss you' win-back email with 15% off her last Sephora purchase — Kérastase hair oil.", missed: "Chloe is already buying that exact product from Amazon. A 15% discount on something she's actively repurchasing elsewhere is ignored noise. The moment to intervene was her first Amazon restock." },
+          with: { sees: "Chloe bought Kérastase at Sephora, then restocked twice on Amazon and repurchased Lab Series 3x on Amazon. She is not churned — she is Amazon-habituated. Her restock cadence is predictable.", action: "Sephora triggers a 'Never run out — set it up once' auto-replenish offer timed to Chloe's restock window: free shipping, Beauty Insider points per shipment, competing directly with Amazon Subscribe & Save.", value: "Chloe spends ~$312/year on Sephora brands via Amazon — all loyalty points, data, and relationship value going to Amazon. Bringing her back to Sephora auto-replenish recaptures that annual spend, rebuilds her loyalty tier, and restores Sephora as the primary relationship for a customer who never actually left the brands." },
+          questions: ["How many of your lapsed customers are actually active buyers — just buying your brands from Amazon instead of you?", "What would your churn rate look like if you could distinguish 'churned from category' from 'churned from channel'?", "If you could identify every customer mid-restock-cycle on Amazon before they complete the order, what is that intervention worth?"],
+        },
       ],
     },
     {
@@ -1338,6 +1363,72 @@ const DATA = {
         },
       ],
     },
+    {
+      id: "levis", name: "Levi's", emoji: "👖", category: "Clothing & Apparel",
+      color: "#C8102E", tagline: "Iconic American denim & apparel brand",
+      personas: [
+        {
+          id: "sophie", name: "Sophie Andersen", age: 34, income: "$78,000",
+          location: "Minneapolis, MN", lifestage: "Family Life Wardrobe Manager",
+          signal: "Sophie buys Levi's jeans — but Ario reveals she is the primary apparel buyer for a family of four",
+          avatar: "SA", orders: 11, totalSpent: 487, avgOrder: 44,
+          retailers: ["Amazon", "Nordstrom"],
+          purchases: [
+            { date: "Oct 28, 2025", product: "Levi's Men's 565 Loose Straight Jeans, Medium Stonewash, 34x32", retailer: "Amazon", price: 54.99, status: "Delivered" },
+            { date: "Oct 20, 2025", product: "Carhartt Men's Graphic Sweatshirt, Black, Size L", retailer: "Amazon", price: 42.99, status: "Delivered" },
+            { date: "Oct 12, 2025", product: "Skechers Men's Slip-In Sneakers, Size 10, Brown", retailer: "Amazon", price: 68.00, status: "Delivered" },
+            { date: "Oct 5, 2025", product: "Volunboy Boys Cargo Jumpsuit, Olive, Size 3-4T", retailer: "Amazon", price: 22.99, status: "Delivered" },
+            { date: "Sep 25, 2025", product: "Amazon Essentials Baby Cotton T-Shirt 3-pack, Size 4T, Blue/White/Gray", retailer: "Amazon", price: 18.99, status: "Delivered" },
+            { date: "Sep 18, 2025", product: "Pullover Cotton Knit Toddler Sweater, Size 4T, Cream", retailer: "Amazon", price: 19.99, status: "Delivered" },
+            { date: "Sep 8, 2025", product: "Nordstrom Rack — Madewell High-Rise Straight Jeans, Sophie size 28", retailer: "Nordstrom", price: 89.00, status: "Delivered" },
+            { date: "Aug 30, 2025", product: "Nordstrom Rack — Vince Camuto Ponte Blazer, Sophie, Navy, Size S", retailer: "Nordstrom", price: 98.00, status: "Delivered" },
+            { date: "Aug 18, 2025", product: "Hanna Andersson Girls Striped Organic Cotton Dress, Size 4, Pink", retailer: "Amazon", price: 32.99, status: "Delivered" },
+            { date: "Aug 5, 2025", product: "Stride Rite Toddler Boy Sneaker, Size 8, Navy", retailer: "Amazon", price: 38.99, status: "Delivered" },
+            { date: "Jul 22, 2025", product: "Levi's Women's 724 High-Rise Straight Jeans, Sophie size 28/30", retailer: "Amazon", price: 59.99, status: "Delivered" },
+          ],
+          insights: [
+            { icon: "👨‍👩‍👧‍👦", title: "Sophie is dressing an entire family — Levi's only sees her", text: "Sophie bought Levi's jeans for herself and her partner from Amazon. But Ario reveals she also bought toddler jumpsuits, baby tees, a girls dress, and toddler sneakers in the same 90-day window. She is the primary apparel buyer for a family of four, and Levi's is treating her as a single customer." },
+            { icon: "🔍", title: "Full household lifestyle profile is visible in her basket", text: "Two adults plus two young children (ages ~1 and ~4) across multiple shopping sessions. Sophie mixes Levi's with Carhartt, Madewell, Amazon Essentials, and Hanna Andersson. Her basket reveals her style tier, her family structure, and her complete share-of-wallet — none of which Levi's can see from first-party data alone." },
+            { icon: "💡", title: "Levi's Kids and family bundles are a massive untapped opportunity", text: "Sophie already trusts and buys Levi's for herself and her partner. Levi's sells kids and toddler denim, but Sophie has never seen an offer. A 'Shop for the whole family' campaign targeting cross-retailer family-basket buyers like Sophie could open an entirely new acquisition vector." },
+          ],
+          without: { sees: "Sophie has purchased Levi's jeans twice in 3 months. She is a repeat women's customer.", action: "Levi's sends Sophie women's seasonal promotions and new jeans drops. Her partner's purchase is attributed to the same household but not connected to any family profile.", missed: "Sophie is buying toddler and baby clothes from Amazon every 2-3 weeks. Levi's has a full kids and toddler line she has never been shown — because her family basket is invisible." },
+          with: { sees: "Sophie is the primary apparel buyer for a family of four — two adults and two young children. She buys Levi's for herself and her partner, and Amazon/Hanna Andersson for her kids.", action: "Levi's shows Sophie a 'Dress the whole crew' campaign featuring Levi's Kids and toddler denim alongside her regular women's buys — with a family bundle discount and a first-time kids purchase offer.", value: "Sophie currently spends $115/yr with Levi's. Adding kids and toddler Levi's to her basket at ~$45/child/season expands her annual Levi's spend to $300+, and builds brand loyalty across the next generation of Levi's customers." },
+          questions: ["What percentage of your adult customers are also actively buying kids apparel — from competitors you can't see?", "How many 'single customers' in your CRM are actually household buyers managing the wardrobes of 2, 3, or 4 people?", "If you could identify every parent buying your brand for themselves AND buying kids apparel elsewhere, how would that change your kids line marketing strategy?"],
+        },
+      ],
+    },
+    {
+      id: "hp", name: "HP", emoji: "🖨️", category: "Consumer Electronics",
+      color: "#0096D6", tagline: "Computing, printing & imaging hardware",
+      personas: [
+        {
+          id: "rachel", name: "Rachel Nguyen", age: 41, income: "$92,000",
+          location: "Sacramento, CA", lifestage: "Home Office / Small Business Owner",
+          signal: "HP sold Rachel a printer — and has watched $340 in ink and paper spend go to Amazon ever since",
+          avatar: "RN", orders: 9, totalSpent: 388, avgOrder: 43,
+          retailers: ["Amazon"],
+          purchases: [
+            { date: "Nov 2, 2025", product: "HP 67XL Black High-Yield Ink Cartridge, 3YM57AN (2-pack)", retailer: "Amazon", price: 44.99, status: "Delivered" },
+            { date: "Oct 15, 2025", product: "HP 67XL Tri-Color High-Yield Ink Cartridge, 3YM58AN (2-pack)", retailer: "Amazon", price: 42.99, status: "Delivered" },
+            { date: "Sep 28, 2025", product: "Amazon Basics 8.5x11 Multipurpose Copy Paper, 500 sheets (5-ream case)", retailer: "Amazon", price: 38.99, status: "Delivered" },
+            { date: "Sep 10, 2025", product: "HP 67XL Black + Color Combo Pack, 3JB31AN", retailer: "Amazon", price: 52.99, status: "Delivered" },
+            { date: "Aug 20, 2025", product: "Amazon Basics Premium Photo Paper, 4x6, Glossy, 100-sheet", retailer: "Amazon", price: 12.99, status: "Delivered" },
+            { date: "Aug 5, 2025", product: "HP 67 Standard Black Ink Cartridge, 3YM56AN (3-pack)", retailer: "Amazon", price: 47.99, status: "Delivered" },
+            { date: "Jul 18, 2025", product: "Avery Shipping Labels for Inkjet Printers, 8.5x11, 25 sheets", retailer: "Amazon", price: 14.99, status: "Delivered" },
+            { date: "Jun 30, 2025", product: "Amazon Basics Multipurpose Copy Paper, 8.5x11, 500-sheet (3-ream)", retailer: "Amazon", price: 24.99, status: "Delivered" },
+            { date: "Jun 5, 2025", product: "HP Envy 6055e All-in-One Wireless Printer — initial purchase (Amazon)", retailer: "Amazon", price: 107.49, status: "Delivered" },
+          ],
+          insights: [
+            { icon: "🖨️", title: "HP sold the printer — Amazon captured all the supply revenue", text: "Rachel bought an HP Envy printer for $107 in June. Since then she has purchased $340 in HP ink and paper — all from Amazon. HP's Instant Ink subscription exists for exactly this use case, but Rachel has never been enrolled. The printer was the introduction; the supply relationship was never claimed." },
+            { icon: "📦", title: "Ink is a subscription product being sold as a one-time purchase", text: "Rachel has bought HP ink 5 times in 5 months at an average of $46/order — a nearly perfect monthly cadence. This is textbook Subscribe & Save behavior that Amazon is capturing by default because it's where Rachel happens to reorder. HP Instant Ink at $5.99–$17.99/month would lock in this revenue and eliminate Amazon from the equation." },
+            { icon: "💰", title: "The printer was a loss leader — the supply margin is the business", text: "HP's gross margin on ink is 40–60%. Rachel is generating roughly $280/year in high-margin ink revenue — for Amazon. The printer business model depends on supply attachment. Without cross-retailer visibility, HP has no idea this customer exists as a supply buyer, let alone that she is churned to Amazon." },
+          ],
+          without: { sees: "Rachel bought an HP Envy printer in June. She has not engaged with HP.com or HP+ since. Inactive customer.", action: "HP sends Rachel a generic 3-month 'How's your printer?' check-in email and a one-time ink discount.", missed: "Rachel has bought $340 in HP ink from Amazon in 5 months. HP sees her as inactive. Amazon sees her as a high-frequency repeat buyer. The supply relationship was never claimed." },
+          with: { sees: "Rachel bought an HP printer in June and has since spent $340 on HP ink and Amazon paper — 5 orders in 5 months. She is a high-frequency supply buyer who has never been offered HP Instant Ink.", action: "HP enrolls Rachel in an Instant Ink trial 3 weeks after her first Amazon ink reorder — 'Never run out again for $5.99/month. Includes ink, automatic delivery, recycling.' A single targeted offer sent at the moment of first reorder.", value: "Rachel's ink spend rate is ~$56/month. HP Instant Ink at $9.99/month captures that revenue, locks in the supply relationship, eliminates Amazon as the default, and generates predictable SaaS-like recurring revenue per device sold." },
+          questions: ["How many printers have you sold in the past 12 months where the buyer then purchased all their ink from Amazon — and you have no idea?", "What is the revenue impact of enrolling 20% more printer buyers into Instant Ink within 30 days of their first ink reorder?", "If you could see every post-purchase supply buy happening outside your ecosystem, how would that change your device-to-subscription conversion strategy?"],
+        },
+      ],
+    },
   ],
   useCases: [
     { id: "lifestage", title: "Life Stage Targeting", icon: "🌱", desc: "Identify customers at major life moments — new parent, new home, career change — before competitors do", example: "Maria is buying a dresser. Ario knows she's a new parent. You know to show her the nursery bundle.", brands: ["ikea","ashley","sephora","stitchfix"] },
@@ -1345,6 +1436,8 @@ const DATA = {
     { id: "personalization", title: "Smarter Personalization", icon: "🎯", desc: "Ground every marketing action in real purchase behavior, not demographic proxies or on-site browsing", example: "Brian browsed coffee tables. Ario knows he's building a man cave. The right offer is a $5,000 entertainment room bundle.", brands: ["ikea","ashley","energizer","stitchfix"] },
     { id: "adtargeting", title: "Ad Targeting Uplift", icon: "📊", desc: "Transform generic demographic ad profiles into real household purchase signals — and command premium CPMs", example: "Jaylen looks like a generic 26-year-old male. Ario knows he's a young parent buying formula and diapers every week.", brands: ["textnow"] },
     { id: "consultation", title: "Design Consultation Intercept", icon: "🎨", desc: "Identify high-budget buyers at peak uncertainty and convert them with expert guidance before they settle for less", example: "Marcus is returning fixtures from Wayfair. Ario knows he has budget and no direction. A consultation closes the deal.", brands: ["rejuvenation2","hunterdouglas"] },
+    { id: "replenish", title: "Auto-Replenish Recovery", icon: "🔄", desc: "Identify loyal customers who silently migrated their replenishment purchases to Amazon — and win them back before the habit sets permanently", example: "Chloe spent $400/yr at Sephora, then went quiet. Ario shows she's still buying — just from Amazon. Same products, wrong channel.", brands: ["sephora","levis"] },
+    { id: "postpurchase", title: "Post-Purchase Ecosystem", icon: "🖨️", desc: "Capture the high-margin accessory and consumable spend that happens after your hero product sale — before Amazon gets it", example: "HP sold Rachel a printer. Ario shows she's bought $340 in ink and paper from Amazon since. HP missed all of it.", brands: ["hp","energizer","rejuvenation2"] },
   ],
   scanMessages: [
     "Connecting to verified shopper network...",
@@ -1422,7 +1515,7 @@ function Landing({ onSelectMode }) {
             Ario gives brands customer-consented, SKU-level purchase data from other retailers — so you can see the full picture, act on real behavior, and personalize at a depth that was never before possible.
           </p>
           <div className="hero-stats">
-            {[['9', 'Brand scenarios'], ['15', 'Customer personas'], ['100+', 'Purchase records'], ['5', 'Use case lenses']].map(([n, l]) => (
+            {[['11', 'Brand scenarios'], ['18', 'Customer personas'], ['150+', 'Purchase records'], ['7', 'Use case lenses']].map(([n, l]) => (
               <div key={l}>
                 <div className="hero-stat-num">{n}</div>
                 <div className="hero-stat-label">{l}</div>
@@ -1475,7 +1568,7 @@ function ModeBrandStory({ onBack }) {
       <div className="brand-grid">
         {DATA.brands.map(b => (
           <div key={b.id} className={`brand-card ${brand?.id === b.id ? 'selected' : ''}`} onClick={() => setBrand(b)}>
-            {(b.id === 'textnow' || b.id === 'rejuvenation2') && <div className="new-badge">New</div>}
+            {(b.id === 'textnow' || b.id === 'rejuvenation2' || b.id === 'levis' || b.id === 'hp') && <div className="new-badge">New</div>}
             <div className="brand-emoji">{b.emoji}</div>
             <div className="brand-name">{b.name}</div>
             <div className="brand-cat">{b.category}</div>
@@ -1573,7 +1666,7 @@ function ModeUseCase({ onBack }) {
           <div key={uc.id} className={`usecase-card ${selected?.id === uc.id ? 'selected' : ''}`}
             style={{animationDelay: `${i*0.1}s`}}
             onClick={() => { setSelected(uc); setBrand(null); setPersona(null); }}>
-            {(uc.id === 'adtargeting' || uc.id === 'consultation') && <div className="new-badge">New</div>}
+            {(uc.id === 'adtargeting' || uc.id === 'consultation' || uc.id === 'replenish' || uc.id === 'postpurchase') && <div className="new-badge">New</div>}
             <div className="usecase-icon">{uc.icon}</div>
             <div className="usecase-title">{uc.title}</div>
             <div className="usecase-desc">{uc.desc}</div>
@@ -1660,12 +1753,19 @@ function ModeSimulate({ onBack }) {
   const categoryBrandMap = {
     'Beauty': 'sephora', 'Health & Personal Care': 'sephora',
     'Home & Kitchen': 'ikea', 'Tools & Home Improvement': 'hunterdouglas',
-    'Electronics': 'energizer', 'Toys & Games': 'energizer',
-    'Clothing, Shoes & Jewelry': 'stitchfix',
-    'Sports & Outdoors': 'energizer', 'Appliances': 'ikea',
+    'Electronics': 'hp', 'Office Products': 'hp',
+    'Toys & Games': 'energizer', 'Appliances': 'ikea',
+    'Clothing, Shoes & Jewelry': 'levis',
+    'Sports & Outdoors': 'stitchfix',
     'Arts, Crafts & Sewing': 'rejuvenation2',
     'Cell Phones & Accessories': 'textnow',
     'Grocery & Gourmet Food': 'textnow',
+    'Patio, Lawn & Garden': 'energizer',
+    'Automotive': 'energizer',
+    'Books': 'stitchfix',
+    'Luggage & Travel Gear': 'stitchfix',
+    'Pet Supplies': 'energizer',
+    'Musical Instruments': 'energizer',
   };
 
   const handleStart = () => {

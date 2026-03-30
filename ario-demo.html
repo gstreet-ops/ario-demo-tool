@@ -1829,7 +1829,7 @@ function ModeSimulate({ onBack }) {
         <div className="company-icon">{company[0]?.toUpperCase()}</div>
         <div><div className="company-name-text">{company}</div><div className="company-category-text">{category} · Illustrative Demo</div></div>
       </div>}
-      <InsightsPanel persona={persona} />
+      <InsightsPanel persona={persona} brand={brand} companyOverride={company} />
       <div className="btn-row" style={{marginTop:32}}>
         <button className="btn-primary" onClick={() => setStep(4)}>See Before & After →</button>
         <button className="btn-secondary" onClick={() => setStep(2)}>← Back</button>
@@ -1946,6 +1946,10 @@ function PanelistHub({ persona, brand, companyOverride }) {
   const allPersonas = brand ? brand.personas : [persona];
   const [active, setActive] = useState(0);
   const current = allPersonas[active];
+  const sub = (text) => {
+    if (!companyOverride || !brand?.name) return text;
+    return replaceBrandName(text, brand.name, companyOverride);
+  };
 
   return (
     <div>
@@ -2004,7 +2008,7 @@ function PanelistHub({ persona, brand, companyOverride }) {
             </div>
           </div>
           <div className="signal-banner">
-            <span>⚡</span> <strong>Ario Signal:</strong>&nbsp;{current.signal}
+            <span>⚡</span> <strong>Ario Signal:</strong>&nbsp;{sub(current.signal)}
           </div>
         </div>
 
@@ -2043,8 +2047,28 @@ function PanelistHub({ persona, brand, companyOverride }) {
   );
 }
 
+// ─── BRAND NAME SUBSTITUTION HELPER ──────────────────────────────────────────
+function replaceBrandName(text, originalBrand, newBrand) {
+  if (!text || !originalBrand || !newBrand) return text;
+  // Replace brand name (e.g., "Sephora" -> "Glow & Co")
+  let result = text.replace(new RegExp(originalBrand, 'g'), newBrand);
+  // Also replace lowercase website references (e.g., "sephora.com" -> "glowandco.com")
+  const lcOriginal = originalBrand.toLowerCase();
+  const lcNew = newBrand.toLowerCase().replace(/[^a-z0-9]/g, '');
+  result = result.replace(new RegExp(lcOriginal + '\\.com', 'g'), lcNew + '.com');
+  // Replace possessive forms that may have been created with special chars
+  // e.g., "Glow & Co's" is fine, but ensure "sephora's" becomes "glow & co's"
+  result = result.replace(new RegExp(lcOriginal + "'s", 'gi'), newBrand + "'s");
+  return result;
+}
+
 // ─── INSIGHTS ─────────────────────────────────────────────────────────────────
-function InsightsPanel({ persona }) {
+function InsightsPanel({ persona, brand, companyOverride }) {
+  const sub = (text) => {
+    if (!companyOverride || !brand?.name) return text;
+    return replaceBrandName(text, brand.name, companyOverride);
+  };
+
   return (
     <div>
       <div style={{marginBottom:24}}>
@@ -2055,8 +2079,8 @@ function InsightsPanel({ persona }) {
         {persona.insights.map((ins, i) => (
           <div key={i} className="insight-card" style={{animationDelay:`${i*0.1}s`}}>
             <div className="insight-icon-wrap">{ins.icon}</div>
-            <div className="insight-title">{ins.title}</div>
-            <div className="insight-text">{ins.text}</div>
+            <div className="insight-title">{sub(ins.title)}</div>
+            <div className="insight-text">{sub(ins.text)}</div>
           </div>
         ))}
       </div>
@@ -2069,6 +2093,10 @@ function BeforeAfterPanel({ persona, brand, companyOverride, onBack, onReset }) 
   const [view, setView] = useState('without');
 
   const brandName = companyOverride || brand?.name || 'Your Brand';
+  const sub = (text) => {
+    if (!companyOverride || !brand?.name) return text;
+    return replaceBrandName(text, brand.name, companyOverride);
+  };
 
   return (
     <div>
@@ -2099,15 +2127,15 @@ function BeforeAfterPanel({ persona, brand, companyOverride, onBack, onReset }) 
           <div className="ba-panel-body">
             <div className="ba-row">
               <div className="ba-row-label">What {brandName} sees</div>
-              <div className="ba-row-text">{persona.without.sees}</div>
+              <div className="ba-row-text">{sub(persona.without.sees)}</div>
             </div>
             <div className="ba-row">
               <div className="ba-row-label">Brand action taken</div>
-              <div className="ba-row-text">{persona.without.action}</div>
+              <div className="ba-row-text">{sub(persona.without.action)}</div>
             </div>
             <div className="ba-missed">
               <span>⚠️</span>
-              <div><strong>Missed opportunity:</strong> {persona.without.missed}</div>
+              <div><strong>Missed opportunity:</strong> {sub(persona.without.missed)}</div>
             </div>
           </div>
         </div>
@@ -2123,15 +2151,15 @@ function BeforeAfterPanel({ persona, brand, companyOverride, onBack, onReset }) 
           <div className="ba-panel-body">
             <div className="ba-row">
               <div className="ba-row-label">What {brandName} now sees</div>
-              <div className="ba-row-text with">{persona.with.sees}</div>
+              <div className="ba-row-text with">{sub(persona.with.sees)}</div>
             </div>
             <div className="ba-row">
               <div className="ba-row-label">Enabled brand action</div>
-              <div className="ba-row-text">{persona.with.action}</div>
+              <div className="ba-row-text">{sub(persona.with.action)}</div>
             </div>
             <div className="ba-value">
               <span>💰</span>
-              <div><strong>Value unlocked:</strong> {persona.with.value}</div>
+              <div><strong>Value unlocked:</strong> {sub(persona.with.value)}</div>
             </div>
           </div>
         </div>
@@ -2143,7 +2171,7 @@ function BeforeAfterPanel({ persona, brand, companyOverride, onBack, onReset }) 
         {persona.questions.map((q, i) => (
           <div key={i} className="question-item" style={{animationDelay:`${i*0.1}s`}}>
             <div className="question-num">{i+1}</div>
-            <div className="question-text">{q}</div>
+            <div className="question-text">{sub(q)}</div>
           </div>
         ))}
       </div>

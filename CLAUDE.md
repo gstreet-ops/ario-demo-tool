@@ -29,23 +29,27 @@ Data is also embedded directly inside ario-demo.html as the DATA constant.
 2. Use Case - pick strategic goal, tool surfaces relevant brand story
 3. Simulate Your Brand - enter company name + category, personalized demo
 
-## Brands & Personas (15 total across 9 brand scenarios)
+## Brands & Personas (18 total across 11 brand scenarios)
 - IKEA: Eliza Santos (Bathroom Renovator), Maria Chen (New Parent)
 - Ashley Furniture: Brian Kowalski (Man Cave Builder), Maria Chen (New Parent)
-- Sephora: Derek Pham (Premium Male Groomer), Sofia Reyes (Pregnancy Life Stage)
+- Sephora: Derek Pham (Premium Male Groomer), Sofia Reyes (Pregnancy Life Stage), Chloe Yamamoto (Loyal Buyer — Silently Defected to Amazon)
 - Hunter Douglas: Carol Martinez (Whole Home Refresh), James & Priya Okafor (New Home Buyers)
 - Stitch Fix: Priya Nair (Career Wardrobe Upgrader), Lauren Kim (Life Event Dresser)
 - Rejuvenation: Tom Bergstrom (Historic Home Restorer)
 - Energizer: Marcus Thompson (Techie/High-Drain Device Owner), Sarah O'Connell (Parent/Emergency Buyer)
-- TextNow [NEW]: Jaylen Brooks (Young Parent - Household Buyer, Walmart data)
-- Rejuvenation 2 [NEW]: Marcus & Dana Webb (Design Consultation Candidate, serial Wayfair returner)
+- TextNow: Jaylen Brooks (Young Parent — Household Buyer, Walmart data)
+- Rejuvenation 2: Marcus & Dana Webb (Design Consultation Candidate, serial Wayfair returner)
+- Levi's: Sophie Andersen (Family Life Wardrobe Manager)
+- HP: Rachel Nguyen (Home Office / Small Business Owner)
 
-## Use Cases (5 total)
+## Use Cases (7 total)
 1. Life Stage Targeting - new parent, new home, career change signals
 2. Competitive Intelligence - customers buying from competitors invisibly
 3. Smarter Personalization - project intent vs. item intent marketing
-4. Ad Targeting Uplift [NEW] - real household purchase data vs. demographic proxies (TextNow)
-5. Design Consultation Intercept [NEW] - high-budget buyers at peak uncertainty (Rejuvenation)
+4. Ad Targeting Uplift - real household purchase data vs. demographic proxies (TextNow)
+5. Design Consultation Intercept - high-budget buyers at peak uncertainty (Rejuvenation 2)
+6. Auto-Replenish Recovery - loyal customers who silently migrated replenishment to Amazon (Sephora, Levi's)
+7. Post-Purchase Ecosystem - capture high-margin accessory/consumable spend after hero product sale (HP, Energizer, Rejuvenation 2)
 
 ## Screen Flow
 Landing -> Mode Selection -> Setup -> Data Scan Animation -> Panelist Hub -> Behavioral Insights -> Before/After -> Strategic Questions -> CTA
@@ -62,8 +66,14 @@ Landing -> Mode Selection -> Setup -> Data Scan Animation -> Panelist Hub -> Beh
 ## Visual Polish (v1.1)
 - "New" badge on TextNow and Rejuvenation 2 brand cards
 - "New" badge on Ad Targeting Uplift and Design Consultation Intercept use case tiles
-- Use case grid supports 5 items (3+2 layout)
-- Hero stats updated to reflect 9 brands, 15 personas, 5 use cases
+- Use case grid supports 7 items (3+2+2 layout)
+- Hero stats updated to reflect 11 brands, 18 personas, 7 use cases
+
+## Bug Fix (v1.2) — Brand Name Substitution in Simulate Mode
+- Added `replaceBrandName()` helper for regex-based brand name replacement
+- Updated InsightsPanel, PanelistHub, and BeforeAfterPanel with `sub()` closures
+- Simulate mode now correctly replaces hardcoded brand names (e.g. "Sephora") with the user's custom company name in all body text
+- Brand Story and Use Case modes unaffected (no companyOverride passed)
 
 ## Website Integration Options
 1. Iframe embed - one line of HTML, works anywhere
@@ -90,7 +100,10 @@ All data is synthetic. Every customer profile, purchase history, and insight is 
 - Clothing, Shoes & Jewelry -> Stitch Fix
 - Arts, Crafts & Sewing -> Rejuvenation
 - Cell Phones & Accessories / Grocery -> TextNow
+- Consumer Electronics / Office Products -> HP
 - All others -> IKEA (default)
+
+Note: Levi's currently mapped via Clothing (same as Stitch Fix). Rejuvenation 2 mapped via Home Design subset.
 
 ## CTA Target
 https://ariodata.com - update the href in BeforeAfterPanel component if needed.
